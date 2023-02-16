@@ -42,7 +42,7 @@ class NetAddress {
 };
 
 
-std::ostream &operator<<(std::ostream &os, const NetAddress &address);
+auto operator<<(std::ostream &os, const NetAddress &address) -> std::ostream &;
 
 }  // namespace Icee
 

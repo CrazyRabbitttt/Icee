@@ -1,6 +1,8 @@
 #ifndef SRC_INCLUDE_CORE_UTILS_H
 #define SRC_INCLUDE_CORE_UTILS_H
 
+#define OS_MAC
+
 #define NON_COPYABLE(class_name)           \
   class_name(const class_name &) = delete; \
   class_name &operator=(const class_name &) = delete

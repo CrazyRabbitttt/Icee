@@ -14,6 +14,8 @@ SET(THREADS_PREFER_PTHREAD_FLAG ON)
 FIND_PACKAGE(Threads REQUIRED)
 
 
+set(CMAKE_CXX_FLAGS -std=c++17)
+
 message(${PROJECT_SOURCE_DIR})
 
 # Formatting utility search path
