@@ -4,16 +4,18 @@
 #include <thread>
 #include <vector>
 
-namespace icee {
+namespace Icee {
+
 using std::thread;
 using std::vector;
 
 class Joiner {
+ public:
   explicit Joiner(vector<thread> &threads) : threads_(threads) {}
   ~Joiner() {
-    for (auto &&thread : threads_) {
-      if (thread.joinable()) {
-        thread.join();
+    for (auto &&th : threads_) {
+      if (th.joinable()) {
+        th.join();
       }
     }
   }

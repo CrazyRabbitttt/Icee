@@ -16,56 +16,54 @@ template <typename T>
 class ThreadSafeQueue {
  public:
   void Push(T new_value) {
-    auto data = std::make_shared<T>(std::move(new_value));
-    std::lock_guard<std::mutex> lock(latch_);
-    queue_.push(data);
-    cv_.notify_one();
+    auto p = std::make_shared<T>(std::move(new_value));
+    std::lock_guard<std::mutex> lk(m_mtx);
+    m_queue.push(p);
+    m_cond.notify_one();  // 1
   }
 
-  void WaitAndPop(T &value) {
-    std::unique_lock<mutex> lock(latch_);
-    cv_.wait(lock, [this]() { !return queue_.empty(); });  // wait for the value in the queue
-    value = std::move(*(queue_.front()));
-    queue_.pop();
+  void WaitAndPop(T &value)  // 2
+  {
+    std::unique_lock<std::mutex> lk(m_mtx);
+    m_cond.wait(lk, [this] { return !m_queue.empty(); });
+    value = std::move(*(m_queue.front()));
+    m_queue.pop();
   }
 
-  std::shared_ptr<T> WaitAndPop() {
-    std::unique_lock<mutex> lock(latch_);
-    cv_.wait(lock, [this]() { !return queue_.empty(); });  // wait for the value in the queue
-    auto res = queue_.front();
-    queue_.pop();
-    return res;
+  std::shared_ptr<T> WaitAndPop()  // 3
+  {
+    std::unique_lock<std::mutex> lk(m_mtx);
+    m_cond.wait(lk, [this] { return !m_queue.empty(); });  // 4
+    auto ret = m_queue.front();
+    m_queue.pop();
+    return ret;
   }
 
   bool TryPop(T &value) {
-    std::lock_guard<mutex> lock(latch_);
-    if (queue_.empty()) {
-      return false;
-    }
-    value = *(queue_.front());
-    queue_.pop();
+    std::lock_guard<std::mutex> lk(m_mtx);
+    if (m_queue.empty()) return false;
+    value = std::move(*(m_queue.front()));
+    m_queue.pop();
     return true;
   }
 
   std::shared_ptr<T> TryPop() {
-    std::lock_guard<mutex> lock(latch_);
-    if (queue_.empty()) {
-      return std::shared_ptr<T>();
-    }
-    auto res = queue_.front();
-    queue_.pop();
+    std::lock_guard<std::mutex> lk(m_mtx);
+    if (m_queue.empty()) return std::shared_ptr<T>();  // 5
+    auto res = m_queue.front();
+    m_queue.pop();
     return res;
   }
 
-  bool Empty() {
-    std::lock_guard<mutex> lock(latch_);
-    return queue_.empty();
+  bool Empty() const {
+    std::lock_guard<std::mutex> lk(m_mtx);
+    return m_queue.empty();
   }
 
  private:
-  mutable std::mutex latch_;
-  std::queue<std::shared_ptr<T> > queue_;
-  std::condition_variable cv_;
+  mutable mutex m_mtx;
+  queue<std::shared_ptr<T> > m_queue;
+  condition_variable m_cond;
 };
 
 }  // namespace Icee
