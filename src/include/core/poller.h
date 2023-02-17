@@ -41,6 +41,10 @@ class Poller {
 
   NON_COPYABLE(Poller);
 
+  /*
+   * 在 Linux 下 epoll_event.data.ptr 能够存储数据，那么就可以将这个 Connection
+   * 作为 event 的 data 放进 Poller 中
+   */
   void AddConnection(Connection *conn);
 
   auto Poll(int timeout = -1) -> std::vector<Connection *>;
