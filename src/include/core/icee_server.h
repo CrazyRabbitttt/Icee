@@ -1,12 +1,12 @@
 #ifndef SRC_INCLUDE_CORE_ICEE_SERVER_H
 #define SRC_INCLUDE_CORE_ICEE_SERVER_H
 
-#include "acceptor.h"
-#include "connection.h"
-#include "eventLooper.h"
-#include "net_address.h"
-#include "poller.h"
-#include "threadPool.h"
+#include "core/acceptor.h"
+#include "core/connection.h"
+#include "core/eventLooper.h"
+#include "core/net_address.h"
+#include "core/poller.h"
+#include "core/threadPool.h"
 
 namespace Icee {
 
@@ -49,8 +49,6 @@ class IceeServer {
     }
     listener_->loop();
   }
-
-
 
  private:
   bool seted_On_handle_{false};

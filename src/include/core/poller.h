@@ -1,7 +1,7 @@
 #ifndef SRC_INCLUDE_CORE_POLLER_H
 #define SRC_INCLUDE_CORE_POLLER_H
 
-#include "config.h"
+#include "core/config.h"
 
 #ifdef OS_LINUX
 #include <sys/epoll.h>
@@ -12,7 +12,7 @@
 
 #include <vector>
 
-#include "utils.h"
+#include "core/utils.h"
 
 namespace Icee {
 

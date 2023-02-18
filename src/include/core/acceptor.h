@@ -6,8 +6,8 @@
  */
 #include <vector>
 
-#include "utils.h"
-#include "eventLooper.h"
+#include "core/utils.h"
+#include "core/eventLooper.h"
 
 namespace Icee {
 

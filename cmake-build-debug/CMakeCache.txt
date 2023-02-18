@@ -225,6 +225,29 @@ CMAKE_STRIP:FILEPATH=/Library/Developer/CommandLineTools/usr/bin/strip
 // Studio IDE projects all commands are done without /nologo.
 CMAKE_VERBOSE_MAKEFILE:BOOL=FALSE
 
+//Directory under which to collect all populated content
+FETCHCONTENT_BASE_DIR:PATH=/Users/shaoguixin/Icee/cmake-build-debug/_deps
+
+//Disables all attempts to download or update content and assumes
+// source dirs already exist
+FETCHCONTENT_FULLY_DISCONNECTED:BOOL=OFF
+
+//Enables QUIET option for all content population
+FETCHCONTENT_QUIET:BOOL=ON
+
+//When not empty, overrides where to find pre-populated content
+// for doctest
+FETCHCONTENT_SOURCE_DIR_DOCTEST:PATH=
+
+//Enables UPDATE_DISCONNECTED behavior for all content population
+FETCHCONTENT_UPDATES_DISCONNECTED:BOOL=OFF
+
+//Enables UPDATE_DISCONNECTED behavior just for population of doctest
+FETCHCONTENT_UPDATES_DISCONNECTED_DOCTEST:BOOL=OFF
+
+//Git command line client
+GIT_EXECUTABLE:FILEPATH=/opt/homebrew/bin/git
+
 //Value Computed by CMake
 Icee_BINARY_DIR:STATIC=/Users/shaoguixin/Icee/cmake-build-debug
 
@@ -383,4 +406,6 @@ CMAKE_UNAME:INTERNAL=/usr/bin/uname
 CMAKE_VERBOSE_MAKEFILE-ADVANCED:INTERNAL=1
 //Details about finding Threads
 FIND_PACKAGE_MESSAGE_DETAILS_Threads:INTERNAL=[TRUE][v()]
+//ADVANCED property for variable: GIT_EXECUTABLE
+GIT_EXECUTABLE-ADVANCED:INTERNAL=1
 

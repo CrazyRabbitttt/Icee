@@ -7,8 +7,8 @@
 #include <thread>
 #include <vector>
 
-#include "threadSafeQueue.h"
-#include "joiner.h"
+#include "core/threadSafeQueue.h"
+#include "core/joiner.h"
 
 namespace Icee {
 using std::future;

@@ -7,7 +7,7 @@
 #include <mutex>
 #include <unordered_map>
 
-#include "utils.h"
+#include "core/utils.h"
 
 namespace Icee {
 
