@@ -20,7 +20,7 @@ class ThreadPool;
 
 class Connection;
 
-class Accepter;
+class Acceptor;
 
 /*
  * The event_loop acts ad the executor on a single thread

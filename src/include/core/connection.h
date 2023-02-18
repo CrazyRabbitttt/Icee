@@ -12,7 +12,7 @@
 
 namespace Icee {
 
-class EventLopper;  // 本Connection属于哪一个EventLooper
+class EventLooper;  // 本Connection属于哪一个EventLooper
 
 /*
  * 封装了 socket 的各种 method（如读写），并且掌控了 socket 所关注的 event 能够供
@@ -63,12 +63,12 @@ class Connection {
   void ClearWriteBuffer() noexcept;
   void ClearReadBuffer() noexcept;
 
-  void SetLooper(EventLopper *looper) noexcept;
-  auto GetLooper() -> EventLopper *;
+  void SetLooper(EventLooper *looper) noexcept;
+  auto GetLooper() -> EventLooper *;
 
  private:
   /** 本 Connection 属于哪一个 Looper */
-  EventLopper *owner_looper_{nullptr};
+  EventLooper *owner_looper_{nullptr};
   /** 本 Connection 对应的 client socket*/
   std::unique_ptr<Socket> socket_;
   std::unique_ptr<Buffer> read_buffer_;

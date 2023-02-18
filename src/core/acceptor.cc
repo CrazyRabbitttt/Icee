@@ -16,7 +16,7 @@ Acceptor::Acceptor(EventLooper *listener, std::vector<EventLooper *> reactors, N
 
   acceptor_conn_ = std::make_unique<Connection>(std::move(acceptor_socket));
   acceptor_conn_->SetEvents(POLL_READ);                                  // 关注读事件
-  acceptor_conn_->SetLooper(reinterpret_cast<EventLopper *>(listener));  // 属于 Listener 这个 Looper
+  acceptor_conn_->SetLooper(listener);  // 属于 Listener 这个 Looper
 
   listener->AddAcceptor(acceptor_conn_.get());
 }
@@ -34,9 +34,22 @@ void Acceptor::BaseAcceptCallback(Connection *server_conn) {
   auto client_connection = std::make_unique<Connection>(std::move(client_socket));
 
   /** third: 设置 Connection 的一些属性*/
-  client_connection->SetEvents()
+  client_connection->SetEvents(POLL_ET | POLL_READ);  // ET 模式
+  client_connection->SetCallback(GetCustomHandleCallback());
 
+  /** fourth: distribute the connection to any thread*/
+  int index = rand() % event_loopers_.size();
+  client_connection->SetLooper(event_loopers_[index]);
+  event_loopers_[index]->AddConnection(std::move(client_connection));
+}
 
+void Acceptor::SetCustomAcceptCallback(std::function<void(Connection *)> custom_accept_callback) {
+  // point to the accept callback function
+  accept_callback_ = std::move(custom_accept_callback);
+  acceptor_conn_->SetCallback([this](auto &&ph1){
+    BaseAcceptCallback(std::forward<decltype(ph1)>(ph1));
+    accept_callback_(std::forward<decltype(ph1)>(ph1));
+  });
 }
 
 void Acceptor::SetCustomHandleCallback(std::function<void(Connection *)> custom_handle_callback) {
@@ -50,5 +63,11 @@ auto Acceptor::GetCustomAcceptCallback() const noexcept -> std::function<void(Co
 auto Acceptor::GetCustomHandleCallback() const noexcept -> std::function<void(Connection *)> {
   return handle_callback_;
 }
+
+auto Acceptor::GetAcceptorConnection() noexcept -> Connection * {
+  return acceptor_conn_.get();
+}
+
+
 
 }  // namespace Icee
