@@ -99,8 +99,8 @@ void Connection::ClearWriteBuffer() noexcept { write_buffer_->Clear(); }
 
 void Connection::ClearReadBuffer() noexcept { read_buffer_->Clear(); }
 
-void Connection::SetLooper(Lopper *looper) noexcept { owner_looper_ = looper; }
+void Connection::SetLooper(EventLopper *looper) noexcept { owner_looper_ = looper; }
 
-auto Connection::GetLooper() -> Lopper * { return owner_looper_; }
+auto Connection::GetLooper() -> EventLopper * { return owner_looper_; }
 
 }  // namespace Icee

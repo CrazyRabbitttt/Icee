@@ -71,7 +71,7 @@ auto Socket::Accept(NetAddress &client_address) -> int {
   if (fd_ == -1) {
     throw std::logic_error("can not accept() with invalid fd");
   }
-  int client_fd = -1;
+  int client_fd = -1; // fill the result : client address
   client_fd = accept(fd_, client_address.YieldAddr(), client_address.YieldAddrlen());
   if (client_fd == -1) {
     // 高压的情况下可能会失败，但是 server 不能直接失败

@@ -31,8 +31,10 @@ class Socket {
 
   void Connect(NetAddress &server_address);
 
+  /* server : bind + listen + 不断 accept */
   void Bind(NetAddress &server_address, bool set_reusable = true);
 
+  /** 进入监听模式 */
   void Listen();
 
   auto Accept(NetAddress &client_address) -> int; // @Return : the file descriptor

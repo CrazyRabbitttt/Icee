@@ -12,11 +12,15 @@
 
 namespace Icee {
 
-class Lopper;  // forward declaration
+class EventLopper;  // 本Connection属于哪一个EventLooper
 
 /*
  * 封装了 socket 的各种 method（如读写），并且掌控了 socket 所关注的 event 能够供
  * Poller所使用
+ *
+ * Handle the member variable : Socket & Buffer
+ * User can set the call back function to each Connection
+ *
  */
 
 class Connection {
@@ -30,7 +34,7 @@ class Connection {
 
   auto GetSocket() -> Socket *;
 
-  /* Methods for Poller */
+  /* Methods for Poller，关注读写 */
   void SetEvents(uint32_t events);
   auto GetEvents() const noexcept -> uint32_t;
   void SetRevents(uint32_t revents);
@@ -59,12 +63,12 @@ class Connection {
   void ClearWriteBuffer() noexcept;
   void ClearReadBuffer() noexcept;
 
-  void SetLooper(Lopper *looper) noexcept;
-  auto GetLooper() -> Lopper *;
+  void SetLooper(EventLopper *looper) noexcept;
+  auto GetLooper() -> EventLopper *;
 
  private:
   /** 本 Connection 属于哪一个 Looper */
-  Lopper *owner_looper_{nullptr};
+  EventLopper *owner_looper_{nullptr};
   /** 本 Connection 对应的 client socket*/
   std::unique_ptr<Socket> socket_;
   std::unique_ptr<Buffer> read_buffer_;
