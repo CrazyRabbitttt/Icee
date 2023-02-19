@@ -14,7 +14,7 @@ class IceeServer {
  public:
   explicit IceeServer(NetAddress server_address,
                       int concurrent_number = static_cast<int>(std::thread::hardware_concurrency() - 1))
-      : thread_pool_(std::make_unique<ThreadPool>(concurrent_number)), listener_(std::make_unique<EventLooper>()) {
+      : listener_(std::make_unique<EventLooper>()), thread_pool_(std::make_unique<ThreadPool>(concurrent_number)) {
     for (int i = 0; i < concurrent_number; i++) {
       reactors_.push_back(std::make_unique<EventLooper>());
     }
@@ -23,8 +23,8 @@ class IceeServer {
       thread_pool_->submit([capture = reactor.get()] { capture->loop(); });
     }
     // 构造 acceptor
-    std::vector<EventLooper*> raw_reactors{};
-    for (auto& it : reactors_) {
+    std::vector<EventLooper *> raw_reactors{};
+    for (auto &it : reactors_) {
       raw_reactors.emplace_back(it.get());
     }
     acceptor_ = std::make_unique<Acceptor>(listener_.get(), raw_reactors, server_address);
@@ -37,7 +37,7 @@ class IceeServer {
     return *this;
   }
 
-  auto OnHandle(std::function<void(Connection*)> on_handle) -> IceeServer &{
+  auto OnHandle(std::function<void(Connection *)> on_handle) -> IceeServer & {
     acceptor_->SetCustomHandleCallback(std::move(on_handle));
     seted_On_handle_ = true;
     return *this;

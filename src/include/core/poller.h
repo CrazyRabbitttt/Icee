@@ -23,10 +23,11 @@ static const int DEFAULT_EVENT_LISTENED = 1024;
 static constexpr unsigned POLL_ADD = EPOLL_CTL_ADD;
 static constexpr unsigned POLL_READ = EPOLLIN;
 static constexpr unsigned POLL_ET = EPOLLET;
-#endif
+#elif  OS_MAC
 static const unsigned POLL_ADD = EVFILT_READ;  // a bit awkward but this is how kqueue works
 static const unsigned POLL_READ = EV_ADD;
 static const unsigned POLL_ET = EV_CLEAR;
+#endif
 
 class Connection;  // hold the pointer of the connection class
 

@@ -20,7 +20,6 @@ else(${CMAKE_SYSTEM_NAME} MATCHES "Darwin")
 endif()
 
 
-
 SET(THREADS_PREFER_PTHREAD_FLAG ON)
 FIND_PACKAGE(Threads REQUIRED)
 
@@ -56,23 +55,33 @@ target_include_directories(
         PUBLIC ${ICEE_SERVER_SRC_INCLUDE_DIR}   #将目录暴露给网络库target
 )
 
+
+
+# finish build the net library
+
+
 #
 #########################################################
 ### Test (DocTest)
 #########################################################
 #
-##fetch the doctest from github
-#INCLUDE(FetchContent)
-#FETCHCONTENT_DECLARE(
-#        doctest
-#        GIT_REPOSITORY https://github.com/doctest/doctest.git
-#        GIT_TAG v2.4.9
-#        GIT_SHALLOW TRUE
-#)
-#FetchContent_MakeAvailable(doctest)
+#include test test frame
+include(FetchContent)
+FetchContent_Declare(
+        doctest
+        GIT_REPOSITORY https://gitee.com/acking-you/doctest.git
+        GIT_TAG v2.4.9
+        GIT_SHALLOW TRUE
+)
+FetchContent_MakeAvailable(doctest)
 
+# Test thread_pool
+ADD_EXECUTABLE(thread_pool_test ${ICEE_SERVER_TEST_DIR}/core/threadPool_test.cc)
+target_link_libraries(thread_pool_test doctest_with_main)
 
-
+# Test buffer
+ADD_EXECUTABLE(buffer_test ${ICEE_SERVER_TEST_DIR}/core/buffer_test.cc)
+target_link_libraries(buffer_test doctest_with_main icee_core)
 
 
 

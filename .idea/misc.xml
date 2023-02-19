@@ -6,6 +6,7 @@
       <file path="$PROJECT_DIR$/src/core" />
       <file path="$PROJECT_DIR$/src/include/core" />
       <file path="$PROJECT_DIR$/src/include/http" />
+      <file path="$PROJECT_DIR$/test/core" />
     </sourceRoots>
   </component>
 </project>

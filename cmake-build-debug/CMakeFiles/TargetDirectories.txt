@@ -1,3 +1,16 @@
 /Users/shaoguixin/Icee/cmake-build-debug/CMakeFiles/icee_core.dir
+/Users/shaoguixin/Icee/cmake-build-debug/CMakeFiles/thread_pool_test.dir
+/Users/shaoguixin/Icee/cmake-build-debug/CMakeFiles/buffer_test.dir
 /Users/shaoguixin/Icee/cmake-build-debug/CMakeFiles/edit_cache.dir
 /Users/shaoguixin/Icee/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/Users/shaoguixin/Icee/cmake-build-debug/CMakeFiles/list_install_components.dir
+/Users/shaoguixin/Icee/cmake-build-debug/CMakeFiles/install.dir
+/Users/shaoguixin/Icee/cmake-build-debug/CMakeFiles/install/local.dir
+/Users/shaoguixin/Icee/cmake-build-debug/CMakeFiles/install/strip.dir
+/Users/shaoguixin/Icee/cmake-build-debug/_deps/doctest-build/CMakeFiles/doctest_with_main.dir
+/Users/shaoguixin/Icee/cmake-build-debug/_deps/doctest-build/CMakeFiles/edit_cache.dir
+/Users/shaoguixin/Icee/cmake-build-debug/_deps/doctest-build/CMakeFiles/rebuild_cache.dir
+/Users/shaoguixin/Icee/cmake-build-debug/_deps/doctest-build/CMakeFiles/list_install_components.dir
+/Users/shaoguixin/Icee/cmake-build-debug/_deps/doctest-build/CMakeFiles/install.dir
+/Users/shaoguixin/Icee/cmake-build-debug/_deps/doctest-build/CMakeFiles/install/local.dir
+/Users/shaoguixin/Icee/cmake-build-debug/_deps/doctest-build/CMakeFiles/install/strip.dir
