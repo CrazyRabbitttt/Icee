@@ -1,11 +1,12 @@
 #include "core/buffer.h"
-
 #include <cstring>
 
 #include "doctest/doctest.h"
 
 using Icee::Buffer;
 using Icee::INITIAL_BUFFER_SIZE;  // 1024
+
+
 
 TEST_CASE("[core/buffer]") {
   Buffer buf(INITIAL_BUFFER_SIZE);

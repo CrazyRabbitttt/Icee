@@ -42,6 +42,8 @@ auto Cache::GetCapacity() const noexcept -> int { return capacity_; }
 auto Cache::GetCurSize() const noexcept -> int { return current_size_; }
 
 auto Cache::TryLoad(const std::string &identifier, std::vector<unsigned char> &destination) -> bool {
+  // 需要加上读锁
+  std::shared_lock<std::shared_mutex> lock(latch_);
   auto index = mapping_.find(identifier);
   if (index != mapping_.end()) {  // 找到了数据
     index->second->Serialize(destination);

@@ -83,7 +83,9 @@ target_link_libraries(thread_pool_test doctest_with_main)
 ADD_EXECUTABLE(buffer_test ${ICEE_SERVER_TEST_DIR}/core/buffer_test.cc)
 target_link_libraries(buffer_test doctest_with_main icee_core)
 
-
+# Test cache
+ADD_EXECUTABLE(cache_test ${ICEE_SERVER_TEST_DIR}/core/cache_test.cc)
+target_link_libraries(cache_test doctest_with_main icee_core)
 
 
 

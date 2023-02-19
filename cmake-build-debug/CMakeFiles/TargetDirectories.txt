@@ -1,6 +1,7 @@
 /Users/shaoguixin/Icee/cmake-build-debug/CMakeFiles/icee_core.dir
 /Users/shaoguixin/Icee/cmake-build-debug/CMakeFiles/thread_pool_test.dir
 /Users/shaoguixin/Icee/cmake-build-debug/CMakeFiles/buffer_test.dir
+/Users/shaoguixin/Icee/cmake-build-debug/CMakeFiles/cache_test.dir
 /Users/shaoguixin/Icee/cmake-build-debug/CMakeFiles/edit_cache.dir
 /Users/shaoguixin/Icee/cmake-build-debug/CMakeFiles/rebuild_cache.dir
 /Users/shaoguixin/Icee/cmake-build-debug/CMakeFiles/list_install_components.dir

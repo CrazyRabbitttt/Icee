@@ -62,6 +62,14 @@ build CMakeFiles/icee_core.dir/src/core/buffer.cc.o: CXX_COMPILER__icee_core_Deb
   OBJECT_DIR = CMakeFiles/icee_core.dir
   OBJECT_FILE_DIR = CMakeFiles/icee_core.dir/src/core
 
+build CMakeFiles/icee_core.dir/src/core/cache.cc.o: CXX_COMPILER__icee_core_Debug /Users/shaoguixin/Icee/src/core/cache.cc || cmake_object_order_depends_target_icee_core
+  DEFINES = -DOS_MAC
+  DEP_FILE = CMakeFiles/icee_core.dir/src/core/cache.cc.o.d
+  FLAGS = -std=c++17 -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk -mmacosx-version-min=12.0 -fcolor-diagnostics -O3 -Wall -Werror -std=gnu++17
+  INCLUDES = -I/Users/shaoguixin/Icee/src/include
+  OBJECT_DIR = CMakeFiles/icee_core.dir
+  OBJECT_FILE_DIR = CMakeFiles/icee_core.dir/src/core
+
 build CMakeFiles/icee_core.dir/src/core/connection.cc.o: CXX_COMPILER__icee_core_Debug /Users/shaoguixin/Icee/src/core/connection.cc || cmake_object_order_depends_target_icee_core
   DEFINES = -DOS_MAC
   DEP_FILE = CMakeFiles/icee_core.dir/src/core/connection.cc.o.d
@@ -110,7 +118,7 @@ build CMakeFiles/icee_core.dir/src/core/socket.cc.o: CXX_COMPILER__icee_core_Deb
 #############################################
 # Link the static library libicee_core.a
 
-build libicee_core.a: CXX_STATIC_LIBRARY_LINKER__icee_core_Debug CMakeFiles/icee_core.dir/src/core/acceptor.cc.o CMakeFiles/icee_core.dir/src/core/buffer.cc.o CMakeFiles/icee_core.dir/src/core/connection.cc.o CMakeFiles/icee_core.dir/src/core/eventLooper.cc.o CMakeFiles/icee_core.dir/src/core/net_address.cc.o CMakeFiles/icee_core.dir/src/core/poller.cc.o CMakeFiles/icee_core.dir/src/core/socket.cc.o
+build libicee_core.a: CXX_STATIC_LIBRARY_LINKER__icee_core_Debug CMakeFiles/icee_core.dir/src/core/acceptor.cc.o CMakeFiles/icee_core.dir/src/core/buffer.cc.o CMakeFiles/icee_core.dir/src/core/cache.cc.o CMakeFiles/icee_core.dir/src/core/connection.cc.o CMakeFiles/icee_core.dir/src/core/eventLooper.cc.o CMakeFiles/icee_core.dir/src/core/net_address.cc.o CMakeFiles/icee_core.dir/src/core/poller.cc.o CMakeFiles/icee_core.dir/src/core/socket.cc.o
   ARCH_FLAGS = -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk -mmacosx-version-min=12.0
   LANGUAGE_COMPILE_FLAGS = -std=c++17 -g
   OBJECT_DIR = CMakeFiles/icee_core.dir
@@ -186,6 +194,40 @@ build buffer_test: CXX_EXECUTABLE_LINKER__buffer_test_Debug CMakeFiles/buffer_te
   PRE_LINK = :
   TARGET_FILE = buffer_test
   TARGET_PDB = buffer_test.dbg
+
+# =============================================================================
+# Object build statements for EXECUTABLE target cache_test
+
+
+#############################################
+# Order-only phony target for cache_test
+
+build cmake_object_order_depends_target_cache_test: phony || cmake_object_order_depends_target_doctest_with_main cmake_object_order_depends_target_icee_core
+
+build CMakeFiles/cache_test.dir/test/core/cache_test.cc.o: CXX_COMPILER__cache_test_Debug /Users/shaoguixin/Icee/test/core/cache_test.cc || cmake_object_order_depends_target_cache_test
+  DEFINES = -DOS_MAC
+  DEP_FILE = CMakeFiles/cache_test.dir/test/core/cache_test.cc.o.d
+  FLAGS = -std=c++17 -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk -mmacosx-version-min=12.0 -fcolor-diagnostics -std=gnu++17
+  INCLUDES = -I/Users/shaoguixin/Icee/src/include -I/Users/shaoguixin/Icee/cmake-build-debug/_deps/doctest-src
+  OBJECT_DIR = CMakeFiles/cache_test.dir
+  OBJECT_FILE_DIR = CMakeFiles/cache_test.dir/test/core
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target cache_test
+
+
+#############################################
+# Link the executable cache_test
+
+build cache_test: CXX_EXECUTABLE_LINKER__cache_test_Debug CMakeFiles/cache_test.dir/test/core/cache_test.cc.o | _deps/doctest-build/libdoctest_with_main.a libicee_core.a || _deps/doctest-build/libdoctest_with_main.a libicee_core.a
+  FLAGS = -std=c++17 -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk -mmacosx-version-min=12.0
+  LINK_LIBRARIES = _deps/doctest-build/libdoctest_with_main.a  libicee_core.a
+  OBJECT_DIR = CMakeFiles/cache_test.dir
+  POST_BUILD = :
+  PRE_LINK = :
+  TARGET_FILE = cache_test
+  TARGET_PDB = cache_test.dbg
 
 
 #############################################
@@ -373,7 +415,7 @@ build libdoctest_with_main.a: phony _deps/doctest-build/libdoctest_with_main.a
 #############################################
 # Folder: /Users/shaoguixin/Icee/cmake-build-debug
 
-build all: phony libicee_core.a thread_pool_test buffer_test _deps/doctest-build/all
+build all: phony libicee_core.a thread_pool_test buffer_test cache_test _deps/doctest-build/all
 
 # =============================================================================
 
