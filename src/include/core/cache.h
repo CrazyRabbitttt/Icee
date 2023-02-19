@@ -90,7 +90,7 @@ class Cache {
 
   /** dummy node of the double-linked list */
   std::shared_ptr<CacheNode> dummy_header_;
-  std::shared_ptr<CacheNode> dummy_tailer_;
+  std::shared_ptr<CacheNode> dummy_tailer_; 
 };
 
 }  // namespace Icee

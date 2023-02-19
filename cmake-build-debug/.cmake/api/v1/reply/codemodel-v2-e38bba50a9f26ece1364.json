@@ -1,0 +1,122 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"childIndexes" : 
+					[
+						1
+					],
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-.-Debug-f5ebdc15457944623624.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.14"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						2,
+						3
+					]
+				},
+				{
+					"build" : "_deps/doctest-build",
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-_deps.doctest-build-Debug-b627015028c7201bbc95.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.0"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 1,
+					"source" : "cmake-build-debug/_deps/doctest-src",
+					"targetIndexes" : 
+					[
+						1
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"childIndexes" : 
+					[
+						1
+					],
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "Icee",
+					"targetIndexes" : 
+					[
+						0,
+						2,
+						3
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						1
+					],
+					"name" : "doctest",
+					"parentIndex" : 0,
+					"targetIndexes" : 
+					[
+						1
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "buffer_test::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-buffer_test-Debug-dd7c4b3eab8ba416f812.json",
+					"name" : "buffer_test",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "doctest_with_main::@de8c2d1415f8a28c2e63",
+					"jsonFile" : "target-doctest_with_main-Debug-c4b648b2ce0dd6044c4d.json",
+					"name" : "doctest_with_main",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "icee_core::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-icee_core-Debug-a240d027f8378ffa9754.json",
+					"name" : "icee_core",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "thread_pool_test::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-thread_pool_test-Debug-24105a4a0b93a8f1a7c4.json",
+					"name" : "thread_pool_test",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/Users/shaoguixin/Icee/cmake-build-debug",
+		"source" : "/Users/shaoguixin/Icee"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 4
+	}
+}
