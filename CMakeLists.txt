@@ -87,18 +87,13 @@ target_link_libraries(buffer_test doctest_with_main icee_core)
 ADD_EXECUTABLE(cache_test ${ICEE_SERVER_TEST_DIR}/core/cache_test.cc)
 target_link_libraries(cache_test doctest_with_main icee_core)
 
+#Test socket
+ADD_EXECUTABLE(socket_test ${ICEE_SERVER_TEST_DIR}/core/socket_test.cc)
+target_link_libraries(socket_test doctest_with_main icee_core)
 
-
-
-
-
-
-
-
-
-
-
-
+#Test net_address
+ADD_EXECUTABLE(net_address_test ${ICEE_SERVER_TEST_DIR}/core/net_address_test.cc)
+target_link_libraries(net_address_test doctest_with_main icee_core)
 
 
 

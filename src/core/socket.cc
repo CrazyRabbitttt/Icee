@@ -17,11 +17,14 @@ Socket::Socket() noexcept : fd_(-1) {}
 Socket::Socket(int fd) noexcept : fd_(fd) {}
 
 Socket::Socket(Socket &&other) noexcept {
+  printf("calling the copy constructor with copy meaning\n");
   fd_ = other.fd_;
   other.fd_ = -1;
 }
 
 Socket &Socket::operator=(Socket &&other) noexcept {
+  printf("calling the operator= 移动语意\n");
+
   if (fd_ != -1) {
     close(fd_);
   }

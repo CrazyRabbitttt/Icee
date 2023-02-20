@@ -229,6 +229,74 @@ build cache_test: CXX_EXECUTABLE_LINKER__cache_test_Debug CMakeFiles/cache_test.
   TARGET_FILE = cache_test
   TARGET_PDB = cache_test.dbg
 
+# =============================================================================
+# Object build statements for EXECUTABLE target socket_test
+
+
+#############################################
+# Order-only phony target for socket_test
+
+build cmake_object_order_depends_target_socket_test: phony || cmake_object_order_depends_target_doctest_with_main cmake_object_order_depends_target_icee_core
+
+build CMakeFiles/socket_test.dir/test/core/socket_test.cc.o: CXX_COMPILER__socket_test_Debug /Users/shaoguixin/Icee/test/core/socket_test.cc || cmake_object_order_depends_target_socket_test
+  DEFINES = -DOS_MAC
+  DEP_FILE = CMakeFiles/socket_test.dir/test/core/socket_test.cc.o.d
+  FLAGS = -std=c++17 -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk -mmacosx-version-min=12.0 -fcolor-diagnostics -std=gnu++17
+  INCLUDES = -I/Users/shaoguixin/Icee/src/include -I/Users/shaoguixin/Icee/cmake-build-debug/_deps/doctest-src
+  OBJECT_DIR = CMakeFiles/socket_test.dir
+  OBJECT_FILE_DIR = CMakeFiles/socket_test.dir/test/core
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target socket_test
+
+
+#############################################
+# Link the executable socket_test
+
+build socket_test: CXX_EXECUTABLE_LINKER__socket_test_Debug CMakeFiles/socket_test.dir/test/core/socket_test.cc.o | _deps/doctest-build/libdoctest_with_main.a libicee_core.a || _deps/doctest-build/libdoctest_with_main.a libicee_core.a
+  FLAGS = -std=c++17 -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk -mmacosx-version-min=12.0
+  LINK_LIBRARIES = _deps/doctest-build/libdoctest_with_main.a  libicee_core.a
+  OBJECT_DIR = CMakeFiles/socket_test.dir
+  POST_BUILD = :
+  PRE_LINK = :
+  TARGET_FILE = socket_test
+  TARGET_PDB = socket_test.dbg
+
+# =============================================================================
+# Object build statements for EXECUTABLE target net_address_test
+
+
+#############################################
+# Order-only phony target for net_address_test
+
+build cmake_object_order_depends_target_net_address_test: phony || cmake_object_order_depends_target_doctest_with_main cmake_object_order_depends_target_icee_core
+
+build CMakeFiles/net_address_test.dir/test/core/net_address_test.cc.o: CXX_COMPILER__net_address_test_Debug /Users/shaoguixin/Icee/test/core/net_address_test.cc || cmake_object_order_depends_target_net_address_test
+  DEFINES = -DOS_MAC
+  DEP_FILE = CMakeFiles/net_address_test.dir/test/core/net_address_test.cc.o.d
+  FLAGS = -std=c++17 -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk -mmacosx-version-min=12.0 -fcolor-diagnostics -std=gnu++17
+  INCLUDES = -I/Users/shaoguixin/Icee/src/include -I/Users/shaoguixin/Icee/cmake-build-debug/_deps/doctest-src
+  OBJECT_DIR = CMakeFiles/net_address_test.dir
+  OBJECT_FILE_DIR = CMakeFiles/net_address_test.dir/test/core
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target net_address_test
+
+
+#############################################
+# Link the executable net_address_test
+
+build net_address_test: CXX_EXECUTABLE_LINKER__net_address_test_Debug CMakeFiles/net_address_test.dir/test/core/net_address_test.cc.o | _deps/doctest-build/libdoctest_with_main.a libicee_core.a || _deps/doctest-build/libdoctest_with_main.a libicee_core.a
+  FLAGS = -std=c++17 -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk -mmacosx-version-min=12.0
+  LINK_LIBRARIES = _deps/doctest-build/libdoctest_with_main.a  libicee_core.a
+  OBJECT_DIR = CMakeFiles/net_address_test.dir
+  POST_BUILD = :
+  PRE_LINK = :
+  TARGET_FILE = net_address_test
+  TARGET_PDB = net_address_test.dbg
+
 
 #############################################
 # Utility command for edit_cache
@@ -415,7 +483,7 @@ build libdoctest_with_main.a: phony _deps/doctest-build/libdoctest_with_main.a
 #############################################
 # Folder: /Users/shaoguixin/Icee/cmake-build-debug
 
-build all: phony libicee_core.a thread_pool_test buffer_test cache_test _deps/doctest-build/all
+build all: phony libicee_core.a thread_pool_test buffer_test cache_test socket_test net_address_test _deps/doctest-build/all
 
 # =============================================================================
 
