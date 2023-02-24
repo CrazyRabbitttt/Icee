@@ -55,9 +55,15 @@ target_include_directories(
         PUBLIC ${ICEE_SERVER_SRC_INCLUDE_DIR}   #将目录暴露给网络库target
 )
 
-
-
 # finish build the net library
+FILE(GLOB ICEE_HTTP_SOURCE RELATIVE ${CMAKE_SOURCE_DIR} "src/http/*.cc")
+ADD_LIBRARY(icee_http ${ICEE_HTTP_SOURCE})
+TARGET_LINK_LIBRARIES(icee_http Threads::Threads)
+TARGET_COMPILE_OPTIONS(icee_http PRIVATE ${CMAKE_COMPILER_FLAG})
+target_include_directories(
+        icee_http
+        PUBLIC ${ICEE_SERVER_SRC_INCLUDE_DIR}   #将目录暴露给 http
+)
 
 
 #

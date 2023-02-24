@@ -1,10 +1,10 @@
 # ninja log v5
 2	251	1676855056098569314	CMakeFiles/net_address_test.dir/test/core/net_address_test.cc.o	617cf5020854fe4
 385	429	1676854671837599000	libicee_core.a	2cf09a80dc7c0c74
-2	385	1676854671784548516	CMakeFiles/icee_core.dir/src/core/socket.cc.o	f57b6cdebb1cdac1
+404	454	1676903815496823820	looper_test	fd0773c15778e904
 251	304	1676855056152731632	net_address_test	aed50d93ebb63dac
 2	298	1676804625244110400	CMakeFiles/cache_test.dir/test/core/cache_test.cc.o	5f46caedba72d75c
-404	454	1676903815496823820	looper_test	fd0773c15778e904
+2	385	1676854671784548516	CMakeFiles/icee_core.dir/src/core/socket.cc.o	f57b6cdebb1cdac1
 3	615	1676769827824612876	CMakeFiles/icee_core.dir/src/core/eventLooper.cc.o	179f8cada2247457
 3	514	1676769827723605433	CMakeFiles/icee_core.dir/src/core/connection.cc.o	6429ae26acdd4a60
 2	596	1676769827804695216	CMakeFiles/icee_core.dir/src/core/acceptor.cc.o	2c522a7701b86a62
@@ -12,14 +12,14 @@
 3	422	1676769827630400498	CMakeFiles/icee_core.dir/src/core/net_address.cc.o	7dea504ac747655f
 1004	1029	1676768812207452000	_deps/doctest-build/libdoctest_with_main.a	daa6ef7882aefefe
 1	404	1676903815445180883	CMakeFiles/looper_test.dir/test/core/looper_test.cc.o	447421bca08ba1f5
-1	448	1676804716732146293	CMakeFiles/icee_core.dir/src/core/cache.cc.o	b0861e599f186385
-395	436	1676769251014170129	thread_pool_test	972523ea3da1768a
 1	234	1676892726005014871	CMakeFiles/socket_test.dir/test/core/socket_test.cc.o	a3f3a8305b7b8eb
 0	1004	1676768812177237700	_deps/doctest-build/CMakeFiles/doctest_with_main.dir/doctest/parts/doctest.cpp.o	16800887c5efb41f
 474	522	1676804716807318892	cache_test	5f19880976197f92
+395	436	1676769251014170129	thread_pool_test	972523ea3da1768a
+1	448	1676804716732146293	CMakeFiles/icee_core.dir/src/core/cache.cc.o	b0861e599f186385
+235	274	1676892726045725524	socket_test	23efdb6a2a654329
 2	489	1676769827696922333	CMakeFiles/icee_core.dir/src/core/buffer.cc.o	aa1a373457671882
 1	420	1676804414881464510	CMakeFiles/buffer_test.dir/test/core/buffer_test.cc.o	5f6e7bca97ed1deb
-235	274	1676892726045725524	socket_test	23efdb6a2a654329
 1	395	1676769250971960762	CMakeFiles/thread_pool_test.dir/test/core/threadPool_test.cc.o	d08ba092ffd63fee
 420	481	1676804414939332810	buffer_test	c34d4fa87a4d36df
-1	203	1677111975734863420	build.ninja	83111d65e97080e4
+1	203	1677223363216029331	build.ninja	83111d65e97080e4

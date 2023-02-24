@@ -1,4 +1,5 @@
 /Users/shaoguixin/Icee/cmake-build-debug/CMakeFiles/icee_core.dir
+/Users/shaoguixin/Icee/cmake-build-debug/CMakeFiles/icee_http.dir
 /Users/shaoguixin/Icee/cmake-build-debug/CMakeFiles/thread_pool_test.dir
 /Users/shaoguixin/Icee/cmake-build-debug/CMakeFiles/buffer_test.dir
 /Users/shaoguixin/Icee/cmake-build-debug/CMakeFiles/cache_test.dir

@@ -128,6 +128,56 @@ build libicee_core.a: CXX_STATIC_LIBRARY_LINKER__icee_core_Debug CMakeFiles/icee
   TARGET_PDB = icee_core.a.dbg
 
 # =============================================================================
+# Object build statements for STATIC_LIBRARY target icee_http
+
+
+#############################################
+# Order-only phony target for icee_http
+
+build cmake_object_order_depends_target_icee_http: phony || CMakeFiles/icee_http.dir
+
+build CMakeFiles/icee_http.dir/src/http/header.cc.o: CXX_COMPILER__icee_http_Debug /Users/shaoguixin/Icee/src/http/header.cc || cmake_object_order_depends_target_icee_http
+  DEFINES = -DOS_MAC
+  DEP_FILE = CMakeFiles/icee_http.dir/src/http/header.cc.o.d
+  FLAGS = -std=c++17 -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk -mmacosx-version-min=12.0 -fcolor-diagnostics -O3 -Wall -Werror -std=gnu++17
+  INCLUDES = -I/Users/shaoguixin/Icee/src/include
+  OBJECT_DIR = CMakeFiles/icee_http.dir
+  OBJECT_FILE_DIR = CMakeFiles/icee_http.dir/src/http
+
+build CMakeFiles/icee_http.dir/src/http/http_utils.cc.o: CXX_COMPILER__icee_http_Debug /Users/shaoguixin/Icee/src/http/http_utils.cc || cmake_object_order_depends_target_icee_http
+  DEFINES = -DOS_MAC
+  DEP_FILE = CMakeFiles/icee_http.dir/src/http/http_utils.cc.o.d
+  FLAGS = -std=c++17 -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk -mmacosx-version-min=12.0 -fcolor-diagnostics -O3 -Wall -Werror -std=gnu++17
+  INCLUDES = -I/Users/shaoguixin/Icee/src/include
+  OBJECT_DIR = CMakeFiles/icee_http.dir
+  OBJECT_FILE_DIR = CMakeFiles/icee_http.dir/src/http
+
+build CMakeFiles/icee_http.dir/src/http/request.cc.o: CXX_COMPILER__icee_http_Debug /Users/shaoguixin/Icee/src/http/request.cc || cmake_object_order_depends_target_icee_http
+  DEFINES = -DOS_MAC
+  DEP_FILE = CMakeFiles/icee_http.dir/src/http/request.cc.o.d
+  FLAGS = -std=c++17 -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk -mmacosx-version-min=12.0 -fcolor-diagnostics -O3 -Wall -Werror -std=gnu++17
+  INCLUDES = -I/Users/shaoguixin/Icee/src/include
+  OBJECT_DIR = CMakeFiles/icee_http.dir
+  OBJECT_FILE_DIR = CMakeFiles/icee_http.dir/src/http
+
+
+# =============================================================================
+# Link build statements for STATIC_LIBRARY target icee_http
+
+
+#############################################
+# Link the static library libicee_http.a
+
+build libicee_http.a: CXX_STATIC_LIBRARY_LINKER__icee_http_Debug CMakeFiles/icee_http.dir/src/http/header.cc.o CMakeFiles/icee_http.dir/src/http/http_utils.cc.o CMakeFiles/icee_http.dir/src/http/request.cc.o
+  ARCH_FLAGS = -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk -mmacosx-version-min=12.0
+  LANGUAGE_COMPILE_FLAGS = -std=c++17 -g
+  OBJECT_DIR = CMakeFiles/icee_http.dir
+  POST_BUILD = :
+  PRE_LINK = :
+  TARGET_FILE = libicee_http.a
+  TARGET_PDB = icee_http.a.dbg
+
+# =============================================================================
 # Object build statements for EXECUTABLE target thread_pool_test
 
 
@@ -507,6 +557,8 @@ build doctest_with_main: phony _deps/doctest-build/libdoctest_with_main.a
 
 build icee_core: phony libicee_core.a
 
+build icee_http: phony libicee_http.a
+
 build libdoctest_with_main.a: phony _deps/doctest-build/libdoctest_with_main.a
 
 # =============================================================================
@@ -517,7 +569,7 @@ build libdoctest_with_main.a: phony _deps/doctest-build/libdoctest_with_main.a
 #############################################
 # Folder: /Users/shaoguixin/Icee/cmake-build-debug
 
-build all: phony libicee_core.a thread_pool_test buffer_test cache_test socket_test net_address_test looper_test _deps/doctest-build/all
+build all: phony libicee_core.a libicee_http.a thread_pool_test buffer_test cache_test socket_test net_address_test looper_test _deps/doctest-build/all
 
 # =============================================================================
 
