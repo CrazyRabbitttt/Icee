@@ -1,5 +1,7 @@
 #include "http/http_utils.h"
 
+#include <filesystem>
+
 namespace Icee::Http {
 
 /*
@@ -25,7 +27,7 @@ auto Split(const std::string &str, const char *delim) -> std::vector<std::string
   if (begin_index != str.size()) {
     res.emplace_back(str.substr(begin_index, str.size() - begin_index));
   }
-  return std::move(res);
+  return res;
 }
 
 auto Join(const std::vector<std::string> &tokens, const char *deli) noexcept -> std::string {
@@ -44,8 +46,7 @@ auto Join(const std::vector<std::string> &tokens, const char *deli) noexcept -> 
   return res;
 }
 
-
-auto Trim(const std::string &str, const char* delim) -> std::string {
+auto Trim(const std::string &str, const char *delim) -> std::string {
   // 将首位的属于集合中的字符给删除掉，一般是 space，也就是清除两端的空白
   auto first_index = str.find_first_not_of(delim);
   auto last_index = str.find_last_not_of(delim);
@@ -60,9 +61,14 @@ auto ToUpper(std::string str) -> std::string {
   return str;
 }
 
-auto Format(const std::string &str) noexcept->std::string {
-  return ToUpper(Trim(str));
+auto IsFileExist(const std::string &file_path) -> bool { return std::filesystem::exists(file_path); }
+
+auto FileSize(const std::string &file_path) -> size_t {
+  assert(IsFileExist(file_path));
+  return std::filesystem::file_size(file_path);
 }
+
+auto Format(const std::string &str) noexcept -> std::string { return ToUpper(Trim(str)); }
 
 auto ToMethod(const std::string &method_str) noexcept -> Method {
   auto method_formatted = Format(method_str);
@@ -83,30 +89,52 @@ auto ToVersion(const std::string &version_str) noexcept -> Version {
   return Version::UNSUPPORTED;
 }
 
+auto ToExtension(const std::string &extension_str) noexcept -> Extension {
+  auto extension_str_formatted = Format(extension_str);
+  if (extension_str_formatted == Extension_String_Map.at(Extension::HTML)) {
+    return Extension::HTML;
+  }
+  if (extension_str_formatted == Extension_String_Map.at(Extension::CSS)) {
+    return Extension::CSS;
+  }
+  if (extension_str_formatted == Extension_String_Map.at(Extension::PNG)) {
+    return Extension::PNG;
+  }
+  if (extension_str_formatted == Extension_String_Map.at(Extension::JPG)) {
+    return Extension::JPG;
+  }
+  if (extension_str_formatted == Extension_String_Map.at(Extension::JPEG)) {
+    return Extension::JPEG;
+  }
+  if (extension_str_formatted == Extension_String_Map.at(Extension::GIF)) {
+    return Extension::GIF;
+  }
+  return Extension::OCTET;
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+auto ExtensionToMime(const Extension &extension) noexcept -> std::string {
+  if (extension == Extension::HTML) {
+    return MIME_HTML;
+  }
+  if (extension == Extension::CSS) {
+    return MIME_CSS;
+  }
+  if (extension == Extension::PNG) {
+    return MIME_PNG;
+  }
+  if (extension == Extension::JPG) {
+    return MIME_JPG;
+  }
+  if (extension == Extension::JPEG) {
+    return MIME_JPEG;
+  }
+  if (extension == Extension::GIF) {
+    return MIME_GIF;
+  }
+  if (extension == Extension::OCTET) {
+    return MIME_OCTET;
+  }
+  return MIME_OCTET;
+}
 
 }  // namespace Icee::Http

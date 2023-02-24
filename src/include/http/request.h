@@ -28,7 +28,6 @@ class Request {
   auto GetResourceUrl() const noexcept -> std::string;
   auto GetHeaders() const noexcept -> std::vector<Header>;
 
-
  private:
   /** 传入request line，将其拆分称为 Method Url Version */
   auto ParseRequestLine(const std::string &request_line) -> bool;
