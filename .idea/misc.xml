@@ -4,9 +4,11 @@
   <component name="CidrRootsConfiguration">
     <sourceRoots>
       <file path="$PROJECT_DIR$/src/core" />
+      <file path="$PROJECT_DIR$/src/http" />
       <file path="$PROJECT_DIR$/src/include/core" />
       <file path="$PROJECT_DIR$/src/include/http" />
       <file path="$PROJECT_DIR$/test/core" />
+      <file path="$PROJECT_DIR$/test/http" />
     </sourceRoots>
   </component>
 </project>

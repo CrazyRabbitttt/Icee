@@ -17,13 +17,10 @@
 using Icee::Connection;
 using Icee::EventLooper;
 using Icee::NetAddress;
-using Icee::Socket;
-using Icee::POLL_ET;
 using Icee::POLL_ADD;
+using Icee::POLL_ET;
 using Icee::POLL_READ;
 using Icee::Socket;
-
-
 
 TEST_CASE("[core/eventlopper]") {
   EventLooper looper;
@@ -72,5 +69,4 @@ TEST_CASE("[core/eventlopper]") {
       threads[i].join();
     }
   }
-}
 }

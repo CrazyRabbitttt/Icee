@@ -95,6 +95,15 @@ target_link_libraries(socket_test doctest_with_main icee_core)
 ADD_EXECUTABLE(net_address_test ${ICEE_SERVER_TEST_DIR}/core/net_address_test.cc)
 target_link_libraries(net_address_test doctest_with_main icee_core)
 
+#Test Looper Test
+ADD_EXECUTABLE(looper_test ${ICEE_SERVER_TEST_DIR}/core/looper_test.cc)
+target_link_libraries(looper_test doctest_with_main icee_core)
+
+
+
+
+
+
 
 
 
