@@ -15,7 +15,7 @@ namespace Icee::Http {
 static constexpr char SPACE[] = {" "};
 
 // 这里供给所有的 Http 模块使用，能够直接使用 static const variable
-static constexpr char READ_WRITE_PERMISSION = 0600;
+static constexpr char READ_WRITE_PERMISSION[] = "0600";
 static constexpr char CRLF[] = {"\r\n"};
 static constexpr char DEFAULT_ROUTE[] = {"index.html"};
 static constexpr char COLON[] = {":"};
@@ -65,7 +65,7 @@ static const std::unordered_map<Method, std::string> Method_String_Map {
 
 /** Version map, version => string */
 static const std::unordered_map<Version, std::string> Version_String_Map {
-    {Version::HTTP_1_1, "Http/1.1"},
+    {Version::HTTP_1_1, "HTTP/1.1"},
     {Version::UNSUPPORTED, "UNSUPPORTED"}
 };
 

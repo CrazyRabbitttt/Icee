@@ -106,7 +106,9 @@ ADD_EXECUTABLE(looper_test ${ICEE_SERVER_TEST_DIR}/core/looper_test.cc)
 target_link_libraries(looper_test doctest_with_main icee_core)
 
 
-
+# Test Request
+ADD_EXECUTABLE(request_test ${ICEE_SERVER_TEST_DIR}/http/request_test.cc)
+target_link_libraries(request_test doctest_with_main icee_http)
 
 
 
