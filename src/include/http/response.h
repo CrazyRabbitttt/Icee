@@ -11,7 +11,23 @@ class Header;
 
 class Response {
  public:
-  Response(const std::string &status_code, bool should_close, std::optional<std::string>& url);
+  static auto Make200Response(bool should_close, std::optional<std::string> url) -> Response;
+
+  /* 400 Bad Request response, close connection */
+  static auto Make400Response() noexcept -> Response;
+  /* 404 Not Found response, close connection */
+  static auto Make404Response() noexcept -> Response;
+  /* 503 Service Unavailable response, close connection */
+  static auto Make503Response() noexcept -> Response;
+
+  Response(const std::string &status_code, bool should_close, std::optional<std::string> url);
+
+  auto GetHeaders() noexcept -> std::vector<Header>;
+
+  auto ChangeHeader(const std::string &key, const std::string &new_value) noexcept -> bool;
+
+  void Serialize(std::vector<unsigned char> &buffer);
+
 
   /*
    * 基本的 response 至少是需要有 version status_code status_line

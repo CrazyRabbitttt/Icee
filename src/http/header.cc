@@ -2,6 +2,7 @@
 
 #include "http/http_utils.h"
 
+#include <iostream>
 
 namespace Icee::Http {
 
@@ -42,6 +43,26 @@ void Header::SetValue(const std::string &new_value) noexcept { value_ = new_valu
 auto Header::Serialize() const -> std::string {
   return key_ + COLON + value_ + CRLF;
 }
+
+auto operator<<(std::ostream &os, Header header) -> std::ostream & {
+  os << "HTTP Header contains:" << std::endl;
+  os << "Key: " << header.GetKey() << std::endl;
+  os << "Value: " << header.GetValue() << std::endl;
+  os << "IsValid: " << ((header.IsValid()) ? "True" : "False") << std::endl;
+  os << "Serialize to: " << header.Serialize();
+  return os;
+}
+
+
+
+
+
+
+
+
+
+
+
 
 
 

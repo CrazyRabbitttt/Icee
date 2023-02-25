@@ -6,7 +6,9 @@
 /Users/shaoguixin/Icee/cmake-build-debug/CMakeFiles/socket_test.dir
 /Users/shaoguixin/Icee/cmake-build-debug/CMakeFiles/net_address_test.dir
 /Users/shaoguixin/Icee/cmake-build-debug/CMakeFiles/looper_test.dir
+/Users/shaoguixin/Icee/cmake-build-debug/CMakeFiles/header_test.dir
 /Users/shaoguixin/Icee/cmake-build-debug/CMakeFiles/request_test.dir
+/Users/shaoguixin/Icee/cmake-build-debug/CMakeFiles/response_test.dir
 /Users/shaoguixin/Icee/cmake-build-debug/CMakeFiles/edit_cache.dir
 /Users/shaoguixin/Icee/cmake-build-debug/CMakeFiles/rebuild_cache.dir
 /Users/shaoguixin/Icee/cmake-build-debug/CMakeFiles/list_install_components.dir

@@ -88,6 +88,8 @@ auto IsFileExist(const std::string& file_path) -> bool;
 
 auto FileSize(const std::string &file_path) -> size_t;
 
+auto DeleteFile(const std::string &file_path) -> bool;
+
 auto Format(const std::string &str) noexcept -> std::string;
 
 /** 传进来一个 string(可能是任意类型的不标准的、带有前后空白的方法) 获得 Method 类型的返回值*/
@@ -105,12 +107,7 @@ auto ExtensionToMime(const Extension &extension) noexcept -> std::string;
 
 auto Join(const std::vector<std::string> &tokens, const char *deli = SPACE) noexcept -> std::string;
 
-
-
-
-
-
-
+void LoadFile(const std::string &file_path, std::vector<unsigned char> &buffer);
 
 
 

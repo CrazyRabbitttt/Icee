@@ -1,6 +1,8 @@
 #include "http/http_utils.h"
 
 #include <filesystem>
+#include <fstream>
+#include <sstream>
 
 namespace Icee::Http {
 
@@ -56,6 +58,16 @@ auto Trim(const std::string &str, const char *delim) -> std::string {
   return str.substr(first_index, last_index - first_index + 1);
 }
 
+void LoadFile(const std::string &file_path, std::vector<unsigned char> &buffer) {
+  // read file from the file_path to buffer, 文件可能是二进制文件，使用 ifstream
+  auto file_size = FileSize(file_path);
+  auto origin_buffer_size = buffer.size();
+  buffer.resize(buffer.size() + file_size);
+  std::ifstream i_stream(file_path);
+  assert(i_stream.is_open());  // assert the file stream is opened
+  i_stream.read(reinterpret_cast<char *>(&buffer[origin_buffer_size]), static_cast<std::streamsize>(file_size));
+}
+
 auto ToUpper(std::string str) -> std::string {
   std::transform(str.begin(), str.end(), str.begin(), [](char c) { return toupper(c); });
   return str;
@@ -66,6 +78,10 @@ auto IsFileExist(const std::string &file_path) -> bool { return std::filesystem:
 auto FileSize(const std::string &file_path) -> size_t {
   assert(IsFileExist(file_path));
   return std::filesystem::file_size(file_path);
+}
+
+auto DeleteFile(const std::string &file_path) -> bool {
+  return std::filesystem::remove(file_path);
 }
 
 auto Format(const std::string &str) noexcept -> std::string { return ToUpper(Trim(str)); }

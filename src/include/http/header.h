@@ -25,6 +25,8 @@ class Header {
   /** serialize the key & value => "key:value\r\n"*/
   auto Serialize() const -> std::string;
 
+  friend auto operator<<(std::ostream &os, Header header) -> std::ostream &;
+
  private:
   std::string key_;
   std::string value_;
