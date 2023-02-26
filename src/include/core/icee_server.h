@@ -4,9 +4,15 @@
 #include "core/acceptor.h"
 #include "core/connection.h"
 #include "core/eventLooper.h"
+#include "core/cache.h"
 #include "core/net_address.h"
 #include "core/poller.h"
 #include "core/threadPool.h"
+#include "http/cgier.h"
+#include "http/header.h"
+#include "http/http_utils.h"
+#include "http/request.h"
+#include "http/response.h"
 
 namespace Icee {
 
@@ -20,9 +26,9 @@ class IceeServer {
     }
     // 将  Reactors 中的任务提交到线程池中去
     for (auto &reactor : reactors_) {
-      thread_pool_->submit([capture = reactor.get()] { capture->loop(); });
+      thread_pool_->submit([capture = reactor.get()] { capture->loop(); });  // 执行 reactor 中的loop
     }
-    // 构造 acceptor
+    // 构造 acceptor, 获得原始的 reactor 指针（相对于shared_ptr性能好一些）
     std::vector<EventLooper *> raw_reactors{};
     for (auto &it : reactors_) {
       raw_reactors.emplace_back(it.get());

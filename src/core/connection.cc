@@ -43,6 +43,10 @@ void Connection::WriteToWriteBuffer(std::vector<unsigned char> &&other_buf) {
   write_buffer_->Append(std::move(other_buf));
 }
 
+auto Connection::FindAndPopTill(const std::string &target) -> std::optional<std::string> {
+  return read_buffer_->FindAndPopTill(target);
+}
+
 auto Connection::Read() const -> const unsigned char * { return read_buffer_->Data(); }
 
 auto Connection::ReadAsString() const noexcept -> std::string {
@@ -50,7 +54,7 @@ auto Connection::ReadAsString() const noexcept -> std::string {
   return {string_view.begin(), string_view.end()};
 }
 
-auto Connection::Recv() -> ssize_t {
+auto Connection::Recv() -> std::pair<ssize_t, bool> {
   ssize_t recv_bytes{0};
   int from_fd = GetFd();
   unsigned char buf[TEMP_BUF_SIZE];  // 使用栈变量来进行数据的存放
@@ -61,18 +65,18 @@ auto Connection::Recv() -> ssize_t {
       recv_bytes += cur_read;
       WriteToReadBuffer(buf, cur_read);
       memset(buf, 0, sizeof buf);
-    } else if (cur_read == 0) {
-      return recv_bytes;
+    } else if (cur_read == 0) { // 返回值是0，表示对端已关闭连接（也就是收到了 EOF）。
+      return {recv_bytes, true};
     } else if (cur_read == -1 && errno == EINTR) {
-      continue;  // 普通的错误
-    } else if (cur_read == -1 && (errno == EAGAIN || errno == EWOULDBLOCK)) {
+      continue;
+    } else if (cur_read == -1 && (errno == EAGAIN || errno == EWOULDBLOCK)) { // 普通的错误, 可能就是缓冲区满了，等一会就好了
       break;  // 应该被阻塞，那么就代表所有的数据都被读取上来了
     } else {
       perror("HandleConnection: recv() error");
-      return recv_bytes;
+      return {recv_bytes, true};  // 出现了 error， client 已经是退出了
     }
   }
-  return recv_bytes;
+  return {recv_bytes, false};
 }
 
 // 将存在于 buffer 中的数据发送出去
@@ -83,11 +87,13 @@ void Connection::Send() {
   while (cur_write < left_write) {
     auto write_size = send(GetFd(), buf, sizeof buf, 0);
     if (write_size <= 0) {
+      // 那么就是真正的发生了 error
       if (errno != EINTR && errno != EAGAIN && errno != EWOULDBLOCK) {
         perror("Error in Connection::Send()");
         ClearWriteBuffer();
         return;
       }
+      // 否则等一会而就行了
       write_size = 0;
     }
     cur_write += write_size;

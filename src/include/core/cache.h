@@ -82,7 +82,10 @@ class Cache {
  private:
   /** support concurrency*/
   std::shared_mutex latch_;  // cause there are r-w methods, use shared mutex rather than mutex
-  /** map the resource with the cache_node(many user will hold, use shared_ptr)*/
+  /**
+   * map the resource with the cache_node(many user will hold, use shared_ptr)
+   *  in reality: resource_path => cache_node
+   * */
   std::unordered_map<std::string, std::shared_ptr<CacheNode>> mapping_;
 
   const int capacity_{INIT_CACHE_SIZE};

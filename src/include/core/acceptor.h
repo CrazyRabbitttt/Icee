@@ -17,6 +17,7 @@ class NetAddress;
 
 /*
  * 接受新的连接请求并且需要分配给不同的 Poller， 分配给不同的线程去处理
+ * 因为需要将连接分发给不同的线程，所以需要持有 这个 reactors 集合的指针，所以才能直接操控
  */
 class Acceptor {
  public:

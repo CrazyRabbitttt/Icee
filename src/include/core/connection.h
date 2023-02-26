@@ -54,10 +54,14 @@ class Connection {
   void WriteToWriteBuffer(const std::string &str);
   void WriteToWriteBuffer(std::vector<unsigned char> &&other_buf);
 
+  /** 在 reader_buffer 中寻找 target & 更新 buffer 的内容*/
+  auto FindAndPopTill(const std::string &target) -> std::optional<std::string>;
+
   auto Read() const -> const unsigned char *;
   auto ReadAsString() const noexcept -> std::string;
 
-  auto Recv() -> ssize_t;
+  /** Return if the client exit(cause of some error happens)*/
+  auto Recv() -> std::pair<ssize_t, bool>;
   void Send();
 
   void ClearWriteBuffer() noexcept;

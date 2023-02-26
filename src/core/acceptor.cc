@@ -39,7 +39,7 @@ void Acceptor::BaseAcceptCallback(Connection *server_conn) {
 
   /** fourth: distribute the connection to any thread*/
   int index = rand() % event_loopers_.size();
-  client_connection->SetLooper(event_loopers_[index]);
+  client_connection->SetLooper(event_loopers_[index]);  // 本连接属于哪一个 looper
   event_loopers_[index]->AddConnection(std::move(client_connection));
 }
 
@@ -47,6 +47,7 @@ void Acceptor::SetCustomAcceptCallback(std::function<void(Connection *)> custom_
   // point to the accept callback function
   accept_callback_ = std::move(custom_accept_callback);
   acceptor_conn_->SetCallback([this](auto &&ph1){
+    // 完美转发， 将类型转发给调用的函数 BaseAcceptCallback & accept_callback_
     BaseAcceptCallback(std::forward<decltype(ph1)>(ph1));
     accept_callback_(std::forward<decltype(ph1)>(ph1));
   });

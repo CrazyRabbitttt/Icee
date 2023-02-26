@@ -1,10 +1,10 @@
 #ifndef SRC_INCLUDE_HTTP_HTTP_UTILS_H
 #define SRC_INCLUDE_HTTP_HTTP_UTILS_H
 
-#include <string>
-#include <vector>
 #include <algorithm>
+#include <string>
 #include <unordered_map>
+#include <vector>
 
 namespace Icee::Http {
 
@@ -20,6 +20,8 @@ static constexpr char CRLF[] = {"\r\n"};
 static constexpr char DEFAULT_ROUTE[] = {"index.html"};
 static constexpr char COLON[] = {":"};
 static constexpr char Dot[] = {"."};
+static constexpr char CGI_BIN[] = {"cgi_bin"};
+static constexpr char CGI_PREFIX[] = {"cgi_temp"};
 
 /* 常见的 header & value*/
 
@@ -28,7 +30,6 @@ static constexpr char RESPONSE_OK[] = {"200 OK"};
 static constexpr char RESPONSE_BAD_REQUEST[] = {"400 Bad Request"};
 static constexpr char RESPONSE_NOT_FOUND[] = {"404 Not Found"};
 static constexpr char RESPONSE_SERVICE_UNAVAILABLE[] = {"503 Service Unavailable"};
-
 
 static constexpr char MIME_HTML[] = {"text/html"};
 static constexpr char MIME_CSS[] = {"text/css"};
@@ -48,7 +49,6 @@ static constexpr char HEADER_CONTENT_LENGTH[] = {"Content-Length"};
 static constexpr char HEADER_CONTENT_TYPE[] = {"Content-Type"};
 static constexpr char HTTP_VERSION[] = {"Http/1.1"};
 
-
 /** HTTP Method enum class, do not support GET/HEAD method */
 enum class Method { GET, HEAD, UNSUPPORTED };
 /** HTTP Version, support HTTP/1.1*/
@@ -57,34 +57,31 @@ enum class Version { HTTP_1_1, UNSUPPORTED };
 enum class Extension { HTML, CSS, PNG, JPG, JPEG, GIF, OCTET };
 
 /*** Method map, method => string */
-static const std::unordered_map<Method, std::string> Method_String_Map {
-    {Method::GET, "GET"},
-    {Method::HEAD, "HEAD"},
-    {Method::UNSUPPORTED, "UNSUPPORTED"}
-};
+static const std::unordered_map<Method, std::string> Method_String_Map{
+    {Method::GET, "GET"}, {Method::HEAD, "HEAD"}, {Method::UNSUPPORTED, "UNSUPPORTED"}};
 
 /** Version map, version => string */
-static const std::unordered_map<Version, std::string> Version_String_Map {
-    {Version::HTTP_1_1, "HTTP/1.1"},
-    {Version::UNSUPPORTED, "UNSUPPORTED"}
-};
+static const std::unordered_map<Version, std::string> Version_String_Map{{Version::HTTP_1_1, "HTTP/1.1"},
+                                                                         {Version::UNSUPPORTED, "UNSUPPORTED"}};
 
-static const std::unordered_map<Extension, std::string> Extension_String_Map {
-    {Extension::HTML, "HTML"},  {Extension::CSS, "CSS"},
-    {Extension::PNG, "PNG"},    {Extension::JPG, "JPG"},
-    {Extension::JPEG, "JPEG"},  {Extension::GIF, "GIF"},
-    {Extension::OCTET, "OCTET"}};
+static const std::unordered_map<Extension, std::string> Extension_String_Map{
+    {Extension::HTML, "HTML"}, {Extension::CSS, "CSS"}, {Extension::PNG, "PNG"},    {Extension::JPG, "JPG"},
+    {Extension::JPEG, "JPEG"}, {Extension::GIF, "GIF"}, {Extension::OCTET, "OCTET"}};
 
 /*
  * Split s string into many sub string, 通过传入的指定的 分隔符 进行数据的分割
  */
 auto Split(const std::string &str, const char *delimer = SPACE) -> std::vector<std::string>;
 
-auto Trim(const std::string &str, const char* delim = SPACE) -> std::string;
+auto Trim(const std::string &str, const char *delim = SPACE) -> std::string;
 
 auto ToUpper(std::string str) -> std::string;
 
-auto IsFileExist(const std::string& file_path) -> bool;
+auto IsFileExist(const std::string &file_path) -> bool;
+
+auto IsDirectoryExists(const std::string &dire_path) -> bool;
+
+auto IsCgiRequest(const std::string &resource_url) noexcept -> bool;
 
 auto FileSize(const std::string &file_path) -> size_t;
 
@@ -108,16 +105,6 @@ auto ExtensionToMime(const Extension &extension) noexcept -> std::string;
 auto Join(const std::vector<std::string> &tokens, const char *deli = SPACE) noexcept -> std::string;
 
 void LoadFile(const std::string &file_path, std::vector<unsigned char> &buffer);
-
-
-
-
-
-
-
-
-
-
 
 }  // namespace Icee::Http
 

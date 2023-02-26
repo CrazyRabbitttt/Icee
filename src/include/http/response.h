@@ -28,6 +28,7 @@ class Response {
 
   void Serialize(std::vector<unsigned char> &buffer);
 
+  void SetShouldTransferContent(bool should_transfer_content) noexcept;
 
   /*
    * 基本的 response 至少是需要有 version status_code status_line
@@ -39,6 +40,7 @@ class Response {
   std::vector<Header> headers_;
   /** 这次的连接是不是 HTTP 长连接 */
   bool should_close_;
+  bool should_transfer_content_;
   std::optional<std::string> url_;
   std::vector<unsigned char> body_;
 };

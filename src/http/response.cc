@@ -73,6 +73,10 @@ void Response::Serialize(std::vector<unsigned char> &buffer) {
 
 auto Response::GetHeaders() noexcept -> std::vector<Header> { return headers_; }
 
+void Response::SetShouldTransferContent(bool should_transfer_content) noexcept {
+  should_transfer_content_ = should_transfer_content;
+}
+
 auto Response::ChangeHeader(const std::string &key, const std::string &new_value) noexcept -> bool {
   for (auto &it : headers_) {
     if (it.GetKey() == key) {

@@ -73,16 +73,20 @@ auto ToUpper(std::string str) -> std::string {
   return str;
 }
 
+auto IsCgiRequest(const std::string &resource_rul) noexcept -> bool {
+  return resource_rul.find(CGI_BIN) != std::string::npos;
+}
+
 auto IsFileExist(const std::string &file_path) -> bool { return std::filesystem::exists(file_path); }
+
+auto IsDirectoryExists(const std::string &dire_path) -> bool { return std::filesystem::is_directory(dire_path); }
 
 auto FileSize(const std::string &file_path) -> size_t {
   assert(IsFileExist(file_path));
   return std::filesystem::file_size(file_path);
 }
 
-auto DeleteFile(const std::string &file_path) -> bool {
-  return std::filesystem::remove(file_path);
-}
+auto DeleteFile(const std::string &file_path) -> bool { return std::filesystem::remove(file_path); }
 
 auto Format(const std::string &str) noexcept -> std::string { return ToUpper(Trim(str)); }
 
