@@ -36,10 +36,10 @@ class EventLooper {
 
   void loop();
 
-  /** 算是比较上层的操控【每一个线程一个Looper】，需要能够添加Acceptor & Connection*/
-
+  /** 算是比较上层的操控【每一个线程一个Looper】，需要能够添加Acceptor & Connection */
   void AddAcceptor(Connection *accept_conn);
 
+  /** connection 会设置它属于哪一个 Looper， Looper内部同时管理 Connection */
   void AddConnection(std::unique_ptr<Connection> new_conn);
 
   auto DeleteConnection(int fd) -> bool;

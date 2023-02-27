@@ -65,8 +65,9 @@ void Response::Serialize(std::vector<unsigned char> &buffer) {
   std::string basic_data = ss.str();
   buffer.insert(buffer.end(), basic_data.begin(), basic_data.end());    // push back the basic data to the buffer
 
-  // 4.将请求的 File 数据写入到 buffer 中
-  if (url_.has_value()) {
+  /** 如果说有数据的话 直接 LoadFile */
+  // 4.将请求的 File 数据写入到 buffer 中(如果说缓存没有命中的情况)
+  if (url_.has_value() && should_transfer_content_) {
     LoadFile(url_.value(), buffer);
   }
 }

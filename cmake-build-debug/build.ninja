@@ -136,9 +136,25 @@ build libicee_core.a: CXX_STATIC_LIBRARY_LINKER__icee_core_Debug CMakeFiles/icee
 
 build cmake_object_order_depends_target_icee_http: phony || CMakeFiles/icee_http.dir
 
+build CMakeFiles/icee_http.dir/src/http/cgier.cc.o: CXX_COMPILER__icee_http_Debug /Users/shaoguixin/Icee/src/http/cgier.cc || cmake_object_order_depends_target_icee_http
+  DEFINES = -DOS_MAC
+  DEP_FILE = CMakeFiles/icee_http.dir/src/http/cgier.cc.o.d
+  FLAGS = -std=c++17 -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk -mmacosx-version-min=12.0 -fcolor-diagnostics -O3 -Wall -Werror -std=gnu++17
+  INCLUDES = -I/Users/shaoguixin/Icee/src/include
+  OBJECT_DIR = CMakeFiles/icee_http.dir
+  OBJECT_FILE_DIR = CMakeFiles/icee_http.dir/src/http
+
 build CMakeFiles/icee_http.dir/src/http/header.cc.o: CXX_COMPILER__icee_http_Debug /Users/shaoguixin/Icee/src/http/header.cc || cmake_object_order_depends_target_icee_http
   DEFINES = -DOS_MAC
   DEP_FILE = CMakeFiles/icee_http.dir/src/http/header.cc.o.d
+  FLAGS = -std=c++17 -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk -mmacosx-version-min=12.0 -fcolor-diagnostics -O3 -Wall -Werror -std=gnu++17
+  INCLUDES = -I/Users/shaoguixin/Icee/src/include
+  OBJECT_DIR = CMakeFiles/icee_http.dir
+  OBJECT_FILE_DIR = CMakeFiles/icee_http.dir/src/http
+
+build CMakeFiles/icee_http.dir/src/http/http_server.cc.o: CXX_COMPILER__icee_http_Debug /Users/shaoguixin/Icee/src/http/http_server.cc || cmake_object_order_depends_target_icee_http
+  DEFINES = -DOS_MAC
+  DEP_FILE = CMakeFiles/icee_http.dir/src/http/http_server.cc.o.d
   FLAGS = -std=c++17 -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk -mmacosx-version-min=12.0 -fcolor-diagnostics -O3 -Wall -Werror -std=gnu++17
   INCLUDES = -I/Users/shaoguixin/Icee/src/include
   OBJECT_DIR = CMakeFiles/icee_http.dir
@@ -176,7 +192,7 @@ build CMakeFiles/icee_http.dir/src/http/response.cc.o: CXX_COMPILER__icee_http_D
 #############################################
 # Link the static library libicee_http.a
 
-build libicee_http.a: CXX_STATIC_LIBRARY_LINKER__icee_http_Debug CMakeFiles/icee_http.dir/src/http/header.cc.o CMakeFiles/icee_http.dir/src/http/http_utils.cc.o CMakeFiles/icee_http.dir/src/http/request.cc.o CMakeFiles/icee_http.dir/src/http/response.cc.o
+build libicee_http.a: CXX_STATIC_LIBRARY_LINKER__icee_http_Debug CMakeFiles/icee_http.dir/src/http/cgier.cc.o CMakeFiles/icee_http.dir/src/http/header.cc.o CMakeFiles/icee_http.dir/src/http/http_server.cc.o CMakeFiles/icee_http.dir/src/http/http_utils.cc.o CMakeFiles/icee_http.dir/src/http/request.cc.o CMakeFiles/icee_http.dir/src/http/response.cc.o
   ARCH_FLAGS = -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk -mmacosx-version-min=12.0
   LANGUAGE_COMPILE_FLAGS = -std=c++17 -g
   OBJECT_DIR = CMakeFiles/icee_http.dir
@@ -286,6 +302,40 @@ build cache_test: CXX_EXECUTABLE_LINKER__cache_test_Debug CMakeFiles/cache_test.
   PRE_LINK = :
   TARGET_FILE = cache_test
   TARGET_PDB = cache_test.dbg
+
+# =============================================================================
+# Object build statements for EXECUTABLE target poller_test
+
+
+#############################################
+# Order-only phony target for poller_test
+
+build cmake_object_order_depends_target_poller_test: phony || cmake_object_order_depends_target_doctest_with_main cmake_object_order_depends_target_icee_core
+
+build CMakeFiles/poller_test.dir/test/core/poller_test.cc.o: CXX_COMPILER__poller_test_Debug /Users/shaoguixin/Icee/test/core/poller_test.cc || cmake_object_order_depends_target_poller_test
+  DEFINES = -DOS_MAC
+  DEP_FILE = CMakeFiles/poller_test.dir/test/core/poller_test.cc.o.d
+  FLAGS = -std=c++17 -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk -mmacosx-version-min=12.0 -fcolor-diagnostics -std=gnu++17
+  INCLUDES = -I/Users/shaoguixin/Icee/src/include -I/Users/shaoguixin/Icee/cmake-build-debug/_deps/doctest-src
+  OBJECT_DIR = CMakeFiles/poller_test.dir
+  OBJECT_FILE_DIR = CMakeFiles/poller_test.dir/test/core
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target poller_test
+
+
+#############################################
+# Link the executable poller_test
+
+build poller_test: CXX_EXECUTABLE_LINKER__poller_test_Debug CMakeFiles/poller_test.dir/test/core/poller_test.cc.o | _deps/doctest-build/libdoctest_with_main.a libicee_core.a || _deps/doctest-build/libdoctest_with_main.a libicee_core.a
+  FLAGS = -std=c++17 -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk -mmacosx-version-min=12.0
+  LINK_LIBRARIES = _deps/doctest-build/libdoctest_with_main.a  libicee_core.a
+  OBJECT_DIR = CMakeFiles/poller_test.dir
+  POST_BUILD = :
+  PRE_LINK = :
+  TARGET_FILE = poller_test
+  TARGET_PDB = poller_test.dbg
 
 # =============================================================================
 # Object build statements for EXECUTABLE target socket_test
@@ -679,7 +729,7 @@ build libdoctest_with_main.a: phony _deps/doctest-build/libdoctest_with_main.a
 #############################################
 # Folder: /Users/shaoguixin/Icee/cmake-build-debug
 
-build all: phony libicee_core.a libicee_http.a thread_pool_test buffer_test cache_test socket_test net_address_test looper_test header_test request_test response_test _deps/doctest-build/all
+build all: phony libicee_core.a libicee_http.a thread_pool_test buffer_test cache_test poller_test socket_test net_address_test looper_test header_test request_test response_test _deps/doctest-build/all
 
 # =============================================================================
 

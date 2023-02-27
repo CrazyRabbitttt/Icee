@@ -55,7 +55,11 @@ class Poller {
  private:
   int poll_fd_;
   uint64_t poll_size_;
+#ifdef OS_LINUX
+  struct epoll_event *poll_events_{nullptr};
+#elif OS_MAC
   struct kevent *poll_events_{nullptr};
+#endif
 };
 
 }  // namespace Icee

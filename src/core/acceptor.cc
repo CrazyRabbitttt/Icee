@@ -15,8 +15,8 @@ Acceptor::Acceptor(EventLooper *listener, std::vector<EventLooper *> reactors, N
   acceptor_socket->Listen();
 
   acceptor_conn_ = std::make_unique<Connection>(std::move(acceptor_socket));
-  acceptor_conn_->SetEvents(POLL_READ);                                  // 关注读事件
-  acceptor_conn_->SetLooper(listener);  // 属于 Listener 这个 Looper
+  acceptor_conn_->SetEvents(POLL_READ);  // 设置一下当前的 connection 当前的关注的事件是什么
+  acceptor_conn_->SetLooper(listener);   // 本 connection 设置 EventLooper
 
   listener->AddAcceptor(acceptor_conn_.get());
 }
@@ -24,7 +24,7 @@ Acceptor::Acceptor(EventLooper *listener, std::vector<EventLooper *> reactors, N
 void Acceptor::BaseAcceptCallback(Connection *server_conn) {
   /** first: call the accept function(), that was it should do */
   NetAddress client_address;
-  int accept_fd = server_conn->GetSocket()->Accept(client_address); // 进行 accept
+  int accept_fd = server_conn->GetSocket()->Accept(client_address);  // 进行 accept
   if (accept_fd == -1) {
     return;
   }
@@ -46,7 +46,7 @@ void Acceptor::BaseAcceptCallback(Connection *server_conn) {
 void Acceptor::SetCustomAcceptCallback(std::function<void(Connection *)> custom_accept_callback) {
   // point to the accept callback function
   accept_callback_ = std::move(custom_accept_callback);
-  acceptor_conn_->SetCallback([this](auto &&ph1){
+  acceptor_conn_->SetCallback([this](auto &&ph1) {
     // 完美转发， 将类型转发给调用的函数 BaseAcceptCallback & accept_callback_
     BaseAcceptCallback(std::forward<decltype(ph1)>(ph1));
     accept_callback_(std::forward<decltype(ph1)>(ph1));
@@ -65,10 +65,6 @@ auto Acceptor::GetCustomHandleCallback() const noexcept -> std::function<void(Co
   return handle_callback_;
 }
 
-auto Acceptor::GetAcceptorConnection() noexcept -> Connection * {
-  return acceptor_conn_.get();
-}
-
-
+auto Acceptor::GetAcceptorConnection() noexcept -> Connection * { return acceptor_conn_.get(); }
 
 }  // namespace Icee

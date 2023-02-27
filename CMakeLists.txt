@@ -93,6 +93,10 @@ target_link_libraries(buffer_test doctest_with_main icee_core)
 ADD_EXECUTABLE(cache_test ${ICEE_SERVER_TEST_DIR}/core/cache_test.cc)
 target_link_libraries(cache_test doctest_with_main icee_core)
 
+# Test poller
+ADD_EXECUTABLE(poller_test ${ICEE_SERVER_TEST_DIR}/core/poller_test.cc)
+target_link_libraries(poller_test doctest_with_main icee_core)
+
 #Test socket
 ADD_EXECUTABLE(socket_test ${ICEE_SERVER_TEST_DIR}/core/socket_test.cc)
 target_link_libraries(socket_test doctest_with_main icee_core)
