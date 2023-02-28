@@ -60,6 +60,8 @@ class Connection {
   auto Read() const -> const unsigned char *;
   auto ReadAsString() const noexcept -> std::string;
 
+  auto WriteAsString() const noexcept -> std::string;
+
   /** Return if the client exit(cause of some error happens)*/
   auto Recv() -> std::pair<ssize_t, bool>;
   void Send();

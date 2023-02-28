@@ -5,6 +5,8 @@
 /Users/shaoguixin/Icee/cmake-build-debug/CMakeFiles/cache_test.dir
 /Users/shaoguixin/Icee/cmake-build-debug/CMakeFiles/poller_test.dir
 /Users/shaoguixin/Icee/cmake-build-debug/CMakeFiles/socket_test.dir
+/Users/shaoguixin/Icee/cmake-build-debug/CMakeFiles/acceptor_test.dir
+/Users/shaoguixin/Icee/cmake-build-debug/CMakeFiles/connection_test.dir
 /Users/shaoguixin/Icee/cmake-build-debug/CMakeFiles/net_address_test.dir
 /Users/shaoguixin/Icee/cmake-build-debug/CMakeFiles/looper_test.dir
 /Users/shaoguixin/Icee/cmake-build-debug/CMakeFiles/header_test.dir

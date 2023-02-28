@@ -20,7 +20,7 @@ void Connection::SetRevents(uint32_t revents) { revents_ = revents; }
 auto Connection::GetRevents() const noexcept -> uint32_t { return revents_; }
 
 void Connection::SetCallback(const std::function<void(Connection *)> &callback) {
-  // lambda 能够使用到 call back & this object
+  // lambda 能够使用到 call back & this object，return 的原因是可能需要传递返回值
   call_back_ = [callback, this] { return callback(this); };
 }
 
@@ -54,6 +54,11 @@ auto Connection::ReadAsString() const noexcept -> std::string {
   return {string_view.begin(), string_view.end()};
 }
 
+auto Connection::WriteAsString() const noexcept -> std::string {
+  auto string_view = write_buffer_->ToStringView();
+  return {string_view.begin(), string_view.end()};
+}
+
 auto Connection::Recv() -> std::pair<ssize_t, bool> {
   ssize_t recv_bytes{0};
   int from_fd = GetFd();
@@ -65,12 +70,12 @@ auto Connection::Recv() -> std::pair<ssize_t, bool> {
       recv_bytes += cur_read;
       WriteToReadBuffer(buf, cur_read);
       memset(buf, 0, sizeof buf);
-    } else if (cur_read == 0) { // 返回值是0，表示对端已关闭连接（也就是收到了 EOF）。
+    } else if (cur_read == 0) {  // 返回值是0，表示对端已关闭连接（也就是收到了 EOF）。
       return {recv_bytes, true};
-    } else if (cur_read == -1 && errno == EINTR) {
+    } else if (cur_read == -1 && errno == EINTR) {  // normal interrupt
       continue;
-    } else if (cur_read == -1 && (errno == EAGAIN || errno == EWOULDBLOCK)) { // 普通的错误, 可能就是缓冲区满了，等一会就好了
-      break;  // 应该被阻塞，那么就代表所有的数据都被读取上来了
+    } else if (cur_read == -1 && (errno == EAGAIN || errno == EWOULDBLOCK)) {  // 所有的数据都被读取上来了,缓冲区没有数据了
+      break;
     } else {
       perror("HandleConnection: recv() error");
       return {recv_bytes, true};  // 出现了 error， client 已经是退出了
@@ -82,11 +87,12 @@ auto Connection::Recv() -> std::pair<ssize_t, bool> {
 // 将存在于 buffer 中的数据发送出去
 void Connection::Send() {
   size_t cur_write{0};
+  ssize_t write;
   const size_t left_write = GetWriteBufferSize();
   const unsigned char *buf = write_buffer_->Data();
   while (cur_write < left_write) {
-    auto write_size = send(GetFd(), buf, sizeof buf, 0);
-    if (write_size <= 0) {
+    write = send(GetFd(), buf + cur_write, left_write - cur_write, 0);
+    if (write <= 0) {
       // 那么就是真正的发生了 error
       if (errno != EINTR && errno != EAGAIN && errno != EWOULDBLOCK) {
         perror("Error in Connection::Send()");
@@ -94,9 +100,9 @@ void Connection::Send() {
         return;
       }
       // 否则等一会而就行了
-      write_size = 0;
+      write = 0;
     }
-    cur_write += write_size;
+    cur_write += write;
   }
   ClearWriteBuffer();
 }

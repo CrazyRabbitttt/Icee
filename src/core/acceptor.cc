@@ -35,7 +35,7 @@ void Acceptor::BaseAcceptCallback(Connection *server_conn) {
 
   /** third: 设置 Connection 的一些属性*/
   client_connection->SetEvents(POLL_ET | POLL_READ);  // ET 模式
-  client_connection->SetCallback(GetCustomHandleCallback());
+  client_connection->SetCallback(GetCustomHandleCallback());    // 执行自定义的回调函数
 
   /** fourth: distribute the connection to any thread*/
   int index = rand() % event_loopers_.size();

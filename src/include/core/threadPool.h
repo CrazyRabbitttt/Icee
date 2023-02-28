@@ -22,7 +22,7 @@ class ThreadPool {
   explicit ThreadPool(uint32_t thread_num = std::thread::hardware_concurrency()) : done_(false), joiner_(threads_) {
     try {
       for (int i = 0; i < thread_num; i++) {
-        threads_.emplace_back(thread(&ThreadPool::worker_thread, this));
+        threads_.emplace_back(&ThreadPool::worker_thread, this);
       }
     } catch (...) {  // 产生异常进行捕获
       done_ = true;
@@ -37,7 +37,7 @@ class ThreadPool {
     queue_.Push(std::function<void()>(func));
   }
 
-  int GetSize() { return threads_.size(); }
+  auto GetSize() -> int { return threads_.size(); }
 
  private:
   void worker_thread() {

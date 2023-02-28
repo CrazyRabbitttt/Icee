@@ -101,6 +101,14 @@ target_link_libraries(poller_test doctest_with_main icee_core)
 ADD_EXECUTABLE(socket_test ${ICEE_SERVER_TEST_DIR}/core/socket_test.cc)
 target_link_libraries(socket_test doctest_with_main icee_core)
 
+#Test accept
+ADD_EXECUTABLE(acceptor_test ${ICEE_SERVER_TEST_DIR}/core/acceptor_test.cc)
+target_link_libraries(acceptor_test doctest_with_main icee_core)
+
+#Test connection
+ADD_EXECUTABLE(connection_test ${ICEE_SERVER_TEST_DIR}/core/connection_test.cc)
+target_link_libraries(connection_test doctest_with_main icee_core)
+
 #Test net_address
 ADD_EXECUTABLE(net_address_test ${ICEE_SERVER_TEST_DIR}/core/net_address_test.cc)
 target_link_libraries(net_address_test doctest_with_main icee_core)

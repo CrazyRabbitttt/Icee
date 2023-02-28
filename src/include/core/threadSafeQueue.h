@@ -30,7 +30,7 @@ class ThreadSafeQueue {
     m_queue.pop();
   }
 
-  std::shared_ptr<T> WaitAndPop()  // 3
+  auto WaitAndPop() -> std::shared_ptr<T>  // 3
   {
     std::unique_lock<std::mutex> lk(m_mtx);
     m_cond.wait(lk, [this] { return !m_queue.empty(); });  // 4
@@ -39,23 +39,27 @@ class ThreadSafeQueue {
     return ret;
   }
 
-  bool TryPop(T &value) {
+  auto TryPop(T &value) -> bool {
     std::lock_guard<std::mutex> lk(m_mtx);
-    if (m_queue.empty()) return false;
+    if (m_queue.empty()) {
+      return false;
+    }
     value = std::move(*(m_queue.front()));
     m_queue.pop();
     return true;
   }
 
-  std::shared_ptr<T> TryPop() {
+  auto TryPop() -> std::shared_ptr<T> {
     std::lock_guard<std::mutex> lk(m_mtx);
-    if (m_queue.empty()) return std::shared_ptr<T>();  // 5
+    if (m_queue.empty()) {
+      return std::shared_ptr<T>();
+    }
     auto res = m_queue.front();
     m_queue.pop();
     return res;
   }
 
-  bool Empty() const {
+  auto Empty() const -> bool {
     std::lock_guard<std::mutex> lk(m_mtx);
     return m_queue.empty();
   }
