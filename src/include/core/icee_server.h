@@ -2,9 +2,9 @@
 #define SRC_INCLUDE_CORE_ICEE_SERVER_H
 
 #include "core/acceptor.h"
+#include "core/cache.h"
 #include "core/connection.h"
 #include "core/eventLooper.h"
-#include "core/cache.h"
 #include "core/net_address.h"
 #include "core/poller.h"
 #include "core/threadPool.h"
@@ -21,7 +21,7 @@ class IceeServer {
   explicit IceeServer(NetAddress server_address,
                       int concurrent_number = static_cast<int>(std::thread::hardware_concurrency() - 1))
       : listener_(std::make_unique<EventLooper>()), thread_pool_(std::make_unique<ThreadPool>(concurrent_number)) {
-    for (int i = 0; i < concurrent_number; i++) {
+    for (int i = 0; i < thread_pool_->GetSize(); i++) {
       reactors_.push_back(std::make_unique<EventLooper>());
     }
     // 将  Reactors 中的任务提交到线程池中去
@@ -30,9 +30,13 @@ class IceeServer {
     }
     // 构造 acceptor, 获得原始的 reactor 指针（相对于shared_ptr性能好一些）
     std::vector<EventLooper *> raw_reactors{};
-    for (auto &it : reactors_) {
-      raw_reactors.emplace_back(it.get());
-    }
+    raw_reactors.reserve(reactors_.size());
+
+    //    for (auto &it : reactors_) {
+    //      raw_reactors.emplace_back(it.get());
+    //    }
+    std::transform(reactors_.begin(), reactors_.end(), std::back_inserter(raw_reactors),
+                   [](auto &uni_ptr) { return uni_ptr.get(); });
     acceptor_ = std::make_unique<Acceptor>(listener_.get(), raw_reactors, server_address);
   }
 
@@ -51,6 +55,7 @@ class IceeServer {
 
   void Begin() {
     if (!seted_On_handle_) {
+      printf("feguy\n");
       throw std::logic_error("Should specify onHandle callback function before starts");
     }
     listener_->loop();

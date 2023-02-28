@@ -12,6 +12,7 @@ namespace Icee::Http {
  */
 
 void ParseHttpRequest(const std::string &serving_directory, std::shared_ptr<Cache> &cache, Connection *client_conn) {
+  printf("Will call parse code\n");
   // 通过解析 client_conn 的内容
   // ET 模式需要一次性将数据读取出来(Recv()内置了while循环读取)
   int fd = client_conn->GetFd();
@@ -112,15 +113,11 @@ int main(int argc, char **argv) {
       }
     }
   }
-
   Icee::IceeServer http_server(address);
   auto cache = std::make_shared<Icee::Cache>();
-  http_server.OnHandle([&](Icee::Connection *client_conn) {
-    Icee::Http::ParseHttpRequest(directory, cache, client_conn);
-  }).Begin();
-
-
-
+  http_server
+      .OnHandle([&](Icee::Connection *client_conn) { Icee::Http::ParseHttpRequest(directory, cache, client_conn); })
+      .Begin();
 
   return 0;
 }

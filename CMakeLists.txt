@@ -33,7 +33,7 @@ SET(ICEE_SERVER_SRC_DIR ${PROJECT_SOURCE_DIR}/src)
 SET(ICEE_SERVER_SRC_INCLUDE_DIR ${PROJECT_SOURCE_DIR}/src/include)
 SET(ICEE_SERVER_TEST_DIR ${PROJECT_SOURCE_DIR}/test)
 SET(ICEE_SERVER_INCLUDE_DIR ${PROJECT_SOURCE_DIR}/test/include)
-SET(ICEE_SERVER_DEMO_DIR ${PROJECT_SOURCE_DIR}/demo)
+SET(ICEE_SERVER_DEMO_DIR ${PROJECT_SOURCE_DIR}/simple_demo)
 
 
 include_directories(${ICEE_SERVER_SRC_INCLUDE_DIR})
@@ -42,7 +42,7 @@ message(${ICEE_SERVER_SRC_INCLUDE_DIR})
 ########################################################
 ## Build
 ########################################################
-set(CMAKE_COMPILER_FLAG -O3 -Wall -Werror)
+set(CMAKE_COMPILER_FLAG -O3 -Wall -g -Werror)
 
 
 #Build the icee library
@@ -63,6 +63,23 @@ TARGET_COMPILE_OPTIONS(icee_http PRIVATE ${CMAKE_COMPILER_FLAG})
 target_include_directories(
         icee_http
         PUBLIC ${ICEE_SERVER_SRC_INCLUDE_DIR}   #将目录暴露给 http
+)
+
+# Build the echo server
+ADD_EXECUTABLE(echo_server ${ICEE_SERVER_DEMO_DIR}/echo_server.cc)
+TARGET_LINK_LIBRARIES(echo_server icee_core)
+TARGET_COMPILE_OPTIONS(echo_server PRIVATE ${CMAKE_COMPILER_FLAG})
+TARGET_INCLUDE_DIRECTORIES(
+        echo_server
+        PUBLIC ${ICEE_SERVER_SRC_INCLUDE_DIR}
+)
+
+# Build the echo client
+ADD_EXECUTABLE(echo_client ${ICEE_SERVER_DEMO_DIR}/echo_client.cc)
+TARGET_LINK_LIBRARIES(echo_client icee_core)
+TARGET_INCLUDE_DIRECTORIES(
+        echo_client
+        PUBLIC ${ICEE_SERVER_SRC_INCLUDE_DIR}
 )
 
 #Build the Http_server

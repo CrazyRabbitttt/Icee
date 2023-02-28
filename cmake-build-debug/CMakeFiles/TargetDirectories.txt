@@ -1,5 +1,7 @@
 /Users/shaoguixin/Icee/cmake-build-debug/CMakeFiles/icee_core.dir
 /Users/shaoguixin/Icee/cmake-build-debug/CMakeFiles/icee_http.dir
+/Users/shaoguixin/Icee/cmake-build-debug/CMakeFiles/echo_server.dir
+/Users/shaoguixin/Icee/cmake-build-debug/CMakeFiles/echo_client.dir
 /Users/shaoguixin/Icee/cmake-build-debug/CMakeFiles/http_server.dir
 /Users/shaoguixin/Icee/cmake-build-debug/CMakeFiles/thread_pool_test.dir
 /Users/shaoguixin/Icee/cmake-build-debug/CMakeFiles/buffer_test.dir
@@ -10,7 +12,6 @@
 /Users/shaoguixin/Icee/cmake-build-debug/CMakeFiles/connection_test.dir
 /Users/shaoguixin/Icee/cmake-build-debug/CMakeFiles/net_address_test.dir
 /Users/shaoguixin/Icee/cmake-build-debug/CMakeFiles/looper_test.dir
-/Users/shaoguixin/Icee/cmake-build-debug/CMakeFiles/header_test.dir
 /Users/shaoguixin/Icee/cmake-build-debug/CMakeFiles/request_test.dir
 /Users/shaoguixin/Icee/cmake-build-debug/CMakeFiles/response_test.dir
 /Users/shaoguixin/Icee/cmake-build-debug/CMakeFiles/edit_cache.dir

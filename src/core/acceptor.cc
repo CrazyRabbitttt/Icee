@@ -19,6 +19,8 @@ Acceptor::Acceptor(EventLooper *listener, std::vector<EventLooper *> reactors, N
   acceptor_conn_->SetLooper(listener);   // 本 connection 设置 EventLooper
 
   listener->AddAcceptor(acceptor_conn_.get());
+  SetCustomAcceptCallback([](Connection *){});
+  SetCustomHandleCallback([](Connection *){});
 }
 
 void Acceptor::BaseAcceptCallback(Connection *server_conn) {

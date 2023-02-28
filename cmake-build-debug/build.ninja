@@ -49,7 +49,7 @@ build cmake_object_order_depends_target_icee_core: phony || CMakeFiles/icee_core
 build CMakeFiles/icee_core.dir/src/core/acceptor.cc.o: CXX_COMPILER__icee_core_Debug /Users/shaoguixin/Icee/src/core/acceptor.cc || cmake_object_order_depends_target_icee_core
   DEFINES = -DOS_MAC
   DEP_FILE = CMakeFiles/icee_core.dir/src/core/acceptor.cc.o.d
-  FLAGS = -std=c++17 -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk -mmacosx-version-min=12.0 -fcolor-diagnostics -O3 -Wall -Werror -std=gnu++17
+  FLAGS = -std=c++17 -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk -mmacosx-version-min=12.0 -fcolor-diagnostics -O3 -Wall -g -Werror -std=gnu++17
   INCLUDES = -I/Users/shaoguixin/Icee/src/include
   OBJECT_DIR = CMakeFiles/icee_core.dir
   OBJECT_FILE_DIR = CMakeFiles/icee_core.dir/src/core
@@ -57,7 +57,7 @@ build CMakeFiles/icee_core.dir/src/core/acceptor.cc.o: CXX_COMPILER__icee_core_D
 build CMakeFiles/icee_core.dir/src/core/buffer.cc.o: CXX_COMPILER__icee_core_Debug /Users/shaoguixin/Icee/src/core/buffer.cc || cmake_object_order_depends_target_icee_core
   DEFINES = -DOS_MAC
   DEP_FILE = CMakeFiles/icee_core.dir/src/core/buffer.cc.o.d
-  FLAGS = -std=c++17 -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk -mmacosx-version-min=12.0 -fcolor-diagnostics -O3 -Wall -Werror -std=gnu++17
+  FLAGS = -std=c++17 -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk -mmacosx-version-min=12.0 -fcolor-diagnostics -O3 -Wall -g -Werror -std=gnu++17
   INCLUDES = -I/Users/shaoguixin/Icee/src/include
   OBJECT_DIR = CMakeFiles/icee_core.dir
   OBJECT_FILE_DIR = CMakeFiles/icee_core.dir/src/core
@@ -65,7 +65,7 @@ build CMakeFiles/icee_core.dir/src/core/buffer.cc.o: CXX_COMPILER__icee_core_Deb
 build CMakeFiles/icee_core.dir/src/core/cache.cc.o: CXX_COMPILER__icee_core_Debug /Users/shaoguixin/Icee/src/core/cache.cc || cmake_object_order_depends_target_icee_core
   DEFINES = -DOS_MAC
   DEP_FILE = CMakeFiles/icee_core.dir/src/core/cache.cc.o.d
-  FLAGS = -std=c++17 -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk -mmacosx-version-min=12.0 -fcolor-diagnostics -O3 -Wall -Werror -std=gnu++17
+  FLAGS = -std=c++17 -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk -mmacosx-version-min=12.0 -fcolor-diagnostics -O3 -Wall -g -Werror -std=gnu++17
   INCLUDES = -I/Users/shaoguixin/Icee/src/include
   OBJECT_DIR = CMakeFiles/icee_core.dir
   OBJECT_FILE_DIR = CMakeFiles/icee_core.dir/src/core
@@ -73,7 +73,7 @@ build CMakeFiles/icee_core.dir/src/core/cache.cc.o: CXX_COMPILER__icee_core_Debu
 build CMakeFiles/icee_core.dir/src/core/connection.cc.o: CXX_COMPILER__icee_core_Debug /Users/shaoguixin/Icee/src/core/connection.cc || cmake_object_order_depends_target_icee_core
   DEFINES = -DOS_MAC
   DEP_FILE = CMakeFiles/icee_core.dir/src/core/connection.cc.o.d
-  FLAGS = -std=c++17 -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk -mmacosx-version-min=12.0 -fcolor-diagnostics -O3 -Wall -Werror -std=gnu++17
+  FLAGS = -std=c++17 -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk -mmacosx-version-min=12.0 -fcolor-diagnostics -O3 -Wall -g -Werror -std=gnu++17
   INCLUDES = -I/Users/shaoguixin/Icee/src/include
   OBJECT_DIR = CMakeFiles/icee_core.dir
   OBJECT_FILE_DIR = CMakeFiles/icee_core.dir/src/core
@@ -81,7 +81,7 @@ build CMakeFiles/icee_core.dir/src/core/connection.cc.o: CXX_COMPILER__icee_core
 build CMakeFiles/icee_core.dir/src/core/eventLooper.cc.o: CXX_COMPILER__icee_core_Debug /Users/shaoguixin/Icee/src/core/eventLooper.cc || cmake_object_order_depends_target_icee_core
   DEFINES = -DOS_MAC
   DEP_FILE = CMakeFiles/icee_core.dir/src/core/eventLooper.cc.o.d
-  FLAGS = -std=c++17 -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk -mmacosx-version-min=12.0 -fcolor-diagnostics -O3 -Wall -Werror -std=gnu++17
+  FLAGS = -std=c++17 -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk -mmacosx-version-min=12.0 -fcolor-diagnostics -O3 -Wall -g -Werror -std=gnu++17
   INCLUDES = -I/Users/shaoguixin/Icee/src/include
   OBJECT_DIR = CMakeFiles/icee_core.dir
   OBJECT_FILE_DIR = CMakeFiles/icee_core.dir/src/core
@@ -89,7 +89,7 @@ build CMakeFiles/icee_core.dir/src/core/eventLooper.cc.o: CXX_COMPILER__icee_cor
 build CMakeFiles/icee_core.dir/src/core/net_address.cc.o: CXX_COMPILER__icee_core_Debug /Users/shaoguixin/Icee/src/core/net_address.cc || cmake_object_order_depends_target_icee_core
   DEFINES = -DOS_MAC
   DEP_FILE = CMakeFiles/icee_core.dir/src/core/net_address.cc.o.d
-  FLAGS = -std=c++17 -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk -mmacosx-version-min=12.0 -fcolor-diagnostics -O3 -Wall -Werror -std=gnu++17
+  FLAGS = -std=c++17 -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk -mmacosx-version-min=12.0 -fcolor-diagnostics -O3 -Wall -g -Werror -std=gnu++17
   INCLUDES = -I/Users/shaoguixin/Icee/src/include
   OBJECT_DIR = CMakeFiles/icee_core.dir
   OBJECT_FILE_DIR = CMakeFiles/icee_core.dir/src/core
@@ -97,7 +97,7 @@ build CMakeFiles/icee_core.dir/src/core/net_address.cc.o: CXX_COMPILER__icee_cor
 build CMakeFiles/icee_core.dir/src/core/poller.cc.o: CXX_COMPILER__icee_core_Debug /Users/shaoguixin/Icee/src/core/poller.cc || cmake_object_order_depends_target_icee_core
   DEFINES = -DOS_MAC
   DEP_FILE = CMakeFiles/icee_core.dir/src/core/poller.cc.o.d
-  FLAGS = -std=c++17 -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk -mmacosx-version-min=12.0 -fcolor-diagnostics -O3 -Wall -Werror -std=gnu++17
+  FLAGS = -std=c++17 -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk -mmacosx-version-min=12.0 -fcolor-diagnostics -O3 -Wall -g -Werror -std=gnu++17
   INCLUDES = -I/Users/shaoguixin/Icee/src/include
   OBJECT_DIR = CMakeFiles/icee_core.dir
   OBJECT_FILE_DIR = CMakeFiles/icee_core.dir/src/core
@@ -105,7 +105,7 @@ build CMakeFiles/icee_core.dir/src/core/poller.cc.o: CXX_COMPILER__icee_core_Deb
 build CMakeFiles/icee_core.dir/src/core/socket.cc.o: CXX_COMPILER__icee_core_Debug /Users/shaoguixin/Icee/src/core/socket.cc || cmake_object_order_depends_target_icee_core
   DEFINES = -DOS_MAC
   DEP_FILE = CMakeFiles/icee_core.dir/src/core/socket.cc.o.d
-  FLAGS = -std=c++17 -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk -mmacosx-version-min=12.0 -fcolor-diagnostics -O3 -Wall -Werror -std=gnu++17
+  FLAGS = -std=c++17 -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk -mmacosx-version-min=12.0 -fcolor-diagnostics -O3 -Wall -g -Werror -std=gnu++17
   INCLUDES = -I/Users/shaoguixin/Icee/src/include
   OBJECT_DIR = CMakeFiles/icee_core.dir
   OBJECT_FILE_DIR = CMakeFiles/icee_core.dir/src/core
@@ -139,7 +139,7 @@ build cmake_object_order_depends_target_icee_http: phony || CMakeFiles/icee_http
 build CMakeFiles/icee_http.dir/src/http/cgier.cc.o: CXX_COMPILER__icee_http_Debug /Users/shaoguixin/Icee/src/http/cgier.cc || cmake_object_order_depends_target_icee_http
   DEFINES = -DOS_MAC
   DEP_FILE = CMakeFiles/icee_http.dir/src/http/cgier.cc.o.d
-  FLAGS = -std=c++17 -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk -mmacosx-version-min=12.0 -fcolor-diagnostics -O3 -Wall -Werror -std=gnu++17
+  FLAGS = -std=c++17 -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk -mmacosx-version-min=12.0 -fcolor-diagnostics -O3 -Wall -g -Werror -std=gnu++17
   INCLUDES = -I/Users/shaoguixin/Icee/src/include
   OBJECT_DIR = CMakeFiles/icee_http.dir
   OBJECT_FILE_DIR = CMakeFiles/icee_http.dir/src/http
@@ -147,7 +147,7 @@ build CMakeFiles/icee_http.dir/src/http/cgier.cc.o: CXX_COMPILER__icee_http_Debu
 build CMakeFiles/icee_http.dir/src/http/header.cc.o: CXX_COMPILER__icee_http_Debug /Users/shaoguixin/Icee/src/http/header.cc || cmake_object_order_depends_target_icee_http
   DEFINES = -DOS_MAC
   DEP_FILE = CMakeFiles/icee_http.dir/src/http/header.cc.o.d
-  FLAGS = -std=c++17 -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk -mmacosx-version-min=12.0 -fcolor-diagnostics -O3 -Wall -Werror -std=gnu++17
+  FLAGS = -std=c++17 -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk -mmacosx-version-min=12.0 -fcolor-diagnostics -O3 -Wall -g -Werror -std=gnu++17
   INCLUDES = -I/Users/shaoguixin/Icee/src/include
   OBJECT_DIR = CMakeFiles/icee_http.dir
   OBJECT_FILE_DIR = CMakeFiles/icee_http.dir/src/http
@@ -155,7 +155,7 @@ build CMakeFiles/icee_http.dir/src/http/header.cc.o: CXX_COMPILER__icee_http_Deb
 build CMakeFiles/icee_http.dir/src/http/http_server.cc.o: CXX_COMPILER__icee_http_Debug /Users/shaoguixin/Icee/src/http/http_server.cc || cmake_object_order_depends_target_icee_http
   DEFINES = -DOS_MAC
   DEP_FILE = CMakeFiles/icee_http.dir/src/http/http_server.cc.o.d
-  FLAGS = -std=c++17 -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk -mmacosx-version-min=12.0 -fcolor-diagnostics -O3 -Wall -Werror -std=gnu++17
+  FLAGS = -std=c++17 -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk -mmacosx-version-min=12.0 -fcolor-diagnostics -O3 -Wall -g -Werror -std=gnu++17
   INCLUDES = -I/Users/shaoguixin/Icee/src/include
   OBJECT_DIR = CMakeFiles/icee_http.dir
   OBJECT_FILE_DIR = CMakeFiles/icee_http.dir/src/http
@@ -163,7 +163,7 @@ build CMakeFiles/icee_http.dir/src/http/http_server.cc.o: CXX_COMPILER__icee_htt
 build CMakeFiles/icee_http.dir/src/http/http_utils.cc.o: CXX_COMPILER__icee_http_Debug /Users/shaoguixin/Icee/src/http/http_utils.cc || cmake_object_order_depends_target_icee_http
   DEFINES = -DOS_MAC
   DEP_FILE = CMakeFiles/icee_http.dir/src/http/http_utils.cc.o.d
-  FLAGS = -std=c++17 -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk -mmacosx-version-min=12.0 -fcolor-diagnostics -O3 -Wall -Werror -std=gnu++17
+  FLAGS = -std=c++17 -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk -mmacosx-version-min=12.0 -fcolor-diagnostics -O3 -Wall -g -Werror -std=gnu++17
   INCLUDES = -I/Users/shaoguixin/Icee/src/include
   OBJECT_DIR = CMakeFiles/icee_http.dir
   OBJECT_FILE_DIR = CMakeFiles/icee_http.dir/src/http
@@ -171,7 +171,7 @@ build CMakeFiles/icee_http.dir/src/http/http_utils.cc.o: CXX_COMPILER__icee_http
 build CMakeFiles/icee_http.dir/src/http/request.cc.o: CXX_COMPILER__icee_http_Debug /Users/shaoguixin/Icee/src/http/request.cc || cmake_object_order_depends_target_icee_http
   DEFINES = -DOS_MAC
   DEP_FILE = CMakeFiles/icee_http.dir/src/http/request.cc.o.d
-  FLAGS = -std=c++17 -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk -mmacosx-version-min=12.0 -fcolor-diagnostics -O3 -Wall -Werror -std=gnu++17
+  FLAGS = -std=c++17 -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk -mmacosx-version-min=12.0 -fcolor-diagnostics -O3 -Wall -g -Werror -std=gnu++17
   INCLUDES = -I/Users/shaoguixin/Icee/src/include
   OBJECT_DIR = CMakeFiles/icee_http.dir
   OBJECT_FILE_DIR = CMakeFiles/icee_http.dir/src/http
@@ -179,7 +179,7 @@ build CMakeFiles/icee_http.dir/src/http/request.cc.o: CXX_COMPILER__icee_http_De
 build CMakeFiles/icee_http.dir/src/http/response.cc.o: CXX_COMPILER__icee_http_Debug /Users/shaoguixin/Icee/src/http/response.cc || cmake_object_order_depends_target_icee_http
   DEFINES = -DOS_MAC
   DEP_FILE = CMakeFiles/icee_http.dir/src/http/response.cc.o.d
-  FLAGS = -std=c++17 -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk -mmacosx-version-min=12.0 -fcolor-diagnostics -O3 -Wall -Werror -std=gnu++17
+  FLAGS = -std=c++17 -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk -mmacosx-version-min=12.0 -fcolor-diagnostics -O3 -Wall -g -Werror -std=gnu++17
   INCLUDES = -I/Users/shaoguixin/Icee/src/include
   OBJECT_DIR = CMakeFiles/icee_http.dir
   OBJECT_FILE_DIR = CMakeFiles/icee_http.dir/src/http
@@ -202,6 +202,74 @@ build libicee_http.a: CXX_STATIC_LIBRARY_LINKER__icee_http_Debug CMakeFiles/icee
   TARGET_PDB = icee_http.a.dbg
 
 # =============================================================================
+# Object build statements for EXECUTABLE target echo_server
+
+
+#############################################
+# Order-only phony target for echo_server
+
+build cmake_object_order_depends_target_echo_server: phony || cmake_object_order_depends_target_icee_core
+
+build CMakeFiles/echo_server.dir/simple_demo/echo_server.cc.o: CXX_COMPILER__echo_server_Debug /Users/shaoguixin/Icee/simple_demo/echo_server.cc || cmake_object_order_depends_target_echo_server
+  DEFINES = -DOS_MAC
+  DEP_FILE = CMakeFiles/echo_server.dir/simple_demo/echo_server.cc.o.d
+  FLAGS = -std=c++17 -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk -mmacosx-version-min=12.0 -fcolor-diagnostics -O3 -Wall -g -Werror -std=gnu++17
+  INCLUDES = -I/Users/shaoguixin/Icee/src/include
+  OBJECT_DIR = CMakeFiles/echo_server.dir
+  OBJECT_FILE_DIR = CMakeFiles/echo_server.dir/simple_demo
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target echo_server
+
+
+#############################################
+# Link the executable echo_server
+
+build echo_server: CXX_EXECUTABLE_LINKER__echo_server_Debug CMakeFiles/echo_server.dir/simple_demo/echo_server.cc.o | libicee_core.a || libicee_core.a
+  FLAGS = -std=c++17 -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk -mmacosx-version-min=12.0
+  LINK_LIBRARIES = libicee_core.a
+  OBJECT_DIR = CMakeFiles/echo_server.dir
+  POST_BUILD = :
+  PRE_LINK = :
+  TARGET_FILE = echo_server
+  TARGET_PDB = echo_server.dbg
+
+# =============================================================================
+# Object build statements for EXECUTABLE target echo_client
+
+
+#############################################
+# Order-only phony target for echo_client
+
+build cmake_object_order_depends_target_echo_client: phony || cmake_object_order_depends_target_icee_core
+
+build CMakeFiles/echo_client.dir/simple_demo/echo_client.cc.o: CXX_COMPILER__echo_client_Debug /Users/shaoguixin/Icee/simple_demo/echo_client.cc || cmake_object_order_depends_target_echo_client
+  DEFINES = -DOS_MAC
+  DEP_FILE = CMakeFiles/echo_client.dir/simple_demo/echo_client.cc.o.d
+  FLAGS = -std=c++17 -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk -mmacosx-version-min=12.0 -fcolor-diagnostics -std=gnu++17
+  INCLUDES = -I/Users/shaoguixin/Icee/src/include
+  OBJECT_DIR = CMakeFiles/echo_client.dir
+  OBJECT_FILE_DIR = CMakeFiles/echo_client.dir/simple_demo
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target echo_client
+
+
+#############################################
+# Link the executable echo_client
+
+build echo_client: CXX_EXECUTABLE_LINKER__echo_client_Debug CMakeFiles/echo_client.dir/simple_demo/echo_client.cc.o | libicee_core.a || libicee_core.a
+  FLAGS = -std=c++17 -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk -mmacosx-version-min=12.0
+  LINK_LIBRARIES = libicee_core.a
+  OBJECT_DIR = CMakeFiles/echo_client.dir
+  POST_BUILD = :
+  PRE_LINK = :
+  TARGET_FILE = echo_client
+  TARGET_PDB = echo_client.dbg
+
+# =============================================================================
 # Object build statements for EXECUTABLE target http_server
 
 
@@ -213,7 +281,7 @@ build cmake_object_order_depends_target_http_server: phony || cmake_object_order
 build CMakeFiles/http_server.dir/src/http/http_server.cc.o: CXX_COMPILER__http_server_Debug /Users/shaoguixin/Icee/src/http/http_server.cc || cmake_object_order_depends_target_http_server
   DEFINES = -DOS_MAC
   DEP_FILE = CMakeFiles/http_server.dir/src/http/http_server.cc.o.d
-  FLAGS = -std=c++17 -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk -mmacosx-version-min=12.0 -fcolor-diagnostics -O3 -Wall -Werror -std=gnu++17
+  FLAGS = -std=c++17 -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk -mmacosx-version-min=12.0 -fcolor-diagnostics -O3 -Wall -g -Werror -std=gnu++17
   INCLUDES = -I/Users/shaoguixin/Icee/src/include
   OBJECT_DIR = CMakeFiles/http_server.dir
   OBJECT_FILE_DIR = CMakeFiles/http_server.dir/src/http
@@ -542,40 +610,6 @@ build looper_test: CXX_EXECUTABLE_LINKER__looper_test_Debug CMakeFiles/looper_te
   TARGET_PDB = looper_test.dbg
 
 # =============================================================================
-# Object build statements for EXECUTABLE target header_test
-
-
-#############################################
-# Order-only phony target for header_test
-
-build cmake_object_order_depends_target_header_test: phony || cmake_object_order_depends_target_doctest_with_main cmake_object_order_depends_target_icee_core
-
-build CMakeFiles/header_test.dir/test/http/header_test.cc.o: CXX_COMPILER__header_test_Debug /Users/shaoguixin/Icee/test/http/header_test.cc || cmake_object_order_depends_target_header_test
-  DEFINES = -DOS_MAC
-  DEP_FILE = CMakeFiles/header_test.dir/test/http/header_test.cc.o.d
-  FLAGS = -std=c++17 -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk -mmacosx-version-min=12.0 -fcolor-diagnostics -std=gnu++17
-  INCLUDES = -I/Users/shaoguixin/Icee/src/include -I/Users/shaoguixin/Icee/cmake-build-debug/_deps/doctest-src
-  OBJECT_DIR = CMakeFiles/header_test.dir
-  OBJECT_FILE_DIR = CMakeFiles/header_test.dir/test/http
-
-
-# =============================================================================
-# Link build statements for EXECUTABLE target header_test
-
-
-#############################################
-# Link the executable header_test
-
-build header_test: CXX_EXECUTABLE_LINKER__header_test_Debug CMakeFiles/header_test.dir/test/http/header_test.cc.o | _deps/doctest-build/libdoctest_with_main.a libicee_core.a || _deps/doctest-build/libdoctest_with_main.a libicee_core.a
-  FLAGS = -std=c++17 -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk -mmacosx-version-min=12.0
-  LINK_LIBRARIES = _deps/doctest-build/libdoctest_with_main.a  libicee_core.a
-  OBJECT_DIR = CMakeFiles/header_test.dir
-  POST_BUILD = :
-  PRE_LINK = :
-  TARGET_FILE = header_test
-  TARGET_PDB = header_test.dbg
-
-# =============================================================================
 # Object build statements for EXECUTABLE target request_test
 
 
@@ -831,7 +865,7 @@ build libdoctest_with_main.a: phony _deps/doctest-build/libdoctest_with_main.a
 #############################################
 # Folder: /Users/shaoguixin/Icee/cmake-build-debug
 
-build all: phony libicee_core.a libicee_http.a http_server thread_pool_test buffer_test cache_test poller_test socket_test acceptor_test connection_test net_address_test looper_test header_test request_test response_test _deps/doctest-build/all
+build all: phony libicee_core.a libicee_http.a echo_server echo_client http_server thread_pool_test buffer_test cache_test poller_test socket_test acceptor_test connection_test net_address_test looper_test request_test response_test _deps/doctest-build/all
 
 # =============================================================================
 
