@@ -202,6 +202,40 @@ build libicee_http.a: CXX_STATIC_LIBRARY_LINKER__icee_http_Debug CMakeFiles/icee
   TARGET_PDB = icee_http.a.dbg
 
 # =============================================================================
+# Object build statements for EXECUTABLE target http_server
+
+
+#############################################
+# Order-only phony target for http_server
+
+build cmake_object_order_depends_target_http_server: phony || cmake_object_order_depends_target_icee_core cmake_object_order_depends_target_icee_http
+
+build CMakeFiles/http_server.dir/src/http/http_server.cc.o: CXX_COMPILER__http_server_Debug /Users/shaoguixin/Icee/src/http/http_server.cc || cmake_object_order_depends_target_http_server
+  DEFINES = -DOS_MAC
+  DEP_FILE = CMakeFiles/http_server.dir/src/http/http_server.cc.o.d
+  FLAGS = -std=c++17 -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk -mmacosx-version-min=12.0 -fcolor-diagnostics -O3 -Wall -Werror -std=gnu++17
+  INCLUDES = -I/Users/shaoguixin/Icee/src/include
+  OBJECT_DIR = CMakeFiles/http_server.dir
+  OBJECT_FILE_DIR = CMakeFiles/http_server.dir/src/http
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target http_server
+
+
+#############################################
+# Link the executable http_server
+
+build http_server: CXX_EXECUTABLE_LINKER__http_server_Debug CMakeFiles/http_server.dir/src/http/http_server.cc.o | libicee_core.a libicee_http.a || libicee_core.a libicee_http.a
+  FLAGS = -std=c++17 -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk -mmacosx-version-min=12.0
+  LINK_LIBRARIES = libicee_core.a  libicee_http.a
+  OBJECT_DIR = CMakeFiles/http_server.dir
+  POST_BUILD = :
+  PRE_LINK = :
+  TARGET_FILE = http_server
+  TARGET_PDB = http_server.dbg
+
+# =============================================================================
 # Object build statements for EXECUTABLE target thread_pool_test
 
 
@@ -797,7 +831,7 @@ build libdoctest_with_main.a: phony _deps/doctest-build/libdoctest_with_main.a
 #############################################
 # Folder: /Users/shaoguixin/Icee/cmake-build-debug
 
-build all: phony libicee_core.a libicee_http.a thread_pool_test buffer_test cache_test poller_test socket_test acceptor_test connection_test net_address_test looper_test header_test request_test response_test _deps/doctest-build/all
+build all: phony libicee_core.a libicee_http.a http_server thread_pool_test buffer_test cache_test poller_test socket_test acceptor_test connection_test net_address_test looper_test header_test request_test response_test _deps/doctest-build/all
 
 # =============================================================================
 

@@ -6,7 +6,7 @@
 
 namespace Icee::Http {
 
-Header::Header(const std::string &key, const std::string &value) : key_(key), value_(value) {}
+Header::Header(const std::string &key, const std::string &value) : key_(key), value_(value),valid_(false) {}
 
 Header::Header(std::string &&key, std::string &&value) : key_(std::move(key)), value_(std::move(value)) {}
 
@@ -40,9 +40,7 @@ auto Header::GetValue() const -> std::string { return value_; }
 
 void Header::SetValue(const std::string &new_value) noexcept { value_ = new_value; }
 
-auto Header::Serialize() const -> std::string {
-  return key_ + COLON + value_ + CRLF;
-}
+auto Header::Serialize() const -> std::string { return key_ + COLON + value_ + CRLF; }
 
 auto operator<<(std::ostream &os, Header header) -> std::ostream & {
   os << "HTTP Header contains:" << std::endl;
@@ -52,18 +50,5 @@ auto operator<<(std::ostream &os, Header header) -> std::ostream & {
   os << "Serialize to: " << header.Serialize();
   return os;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 }  // namespace Icee::Http

@@ -20,6 +20,7 @@ class Request {
   explicit Request(const std::string &request_str) noexcept;
 
   NON_COPYABLE(Request);
+
   auto IsValid() const noexcept -> bool;
   auto ShouldClose() const noexcept -> bool;
   auto GetInvalidReason() const noexcept -> std::string;

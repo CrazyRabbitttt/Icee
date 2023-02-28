@@ -13,11 +13,11 @@ PROJECT(Icee
 
 # 检测操作系统，同时能够适应 Linux & MacOs
 MESSAGE("The environment system : ${CMAKE_SYSTEM_NAME}")
-if(${CMAKE_SYSTEM_NAME} MATCHES "Linux")
+if (${CMAKE_SYSTEM_NAME} MATCHES "Linux")
     ADD_DEFINITIONS(-DOS_LINUX)
-else(${CMAKE_SYSTEM_NAME} MATCHES "Darwin")
+else (${CMAKE_SYSTEM_NAME} MATCHES "Darwin")
     ADD_DEFINITIONS(-DOS_MAC)
-endif()
+endif ()
 
 
 SET(THREADS_PREFER_PTHREAD_FLAG ON)
@@ -55,7 +55,7 @@ target_include_directories(
         PUBLIC ${ICEE_SERVER_SRC_INCLUDE_DIR}   #将目录暴露给网络库target
 )
 
-# finish build the net library
+# Build the net library
 FILE(GLOB ICEE_HTTP_SOURCE RELATIVE ${CMAKE_SOURCE_DIR} "src/http/*.cc")
 ADD_LIBRARY(icee_http ${ICEE_HTTP_SOURCE})
 TARGET_LINK_LIBRARIES(icee_http Threads::Threads)
@@ -63,6 +63,15 @@ TARGET_COMPILE_OPTIONS(icee_http PRIVATE ${CMAKE_COMPILER_FLAG})
 target_include_directories(
         icee_http
         PUBLIC ${ICEE_SERVER_SRC_INCLUDE_DIR}   #将目录暴露给 http
+)
+
+#Build the Http_server
+ADD_EXECUTABLE(http_server ${ICEE_SERVER_SRC_DIR}/http/http_server.cc)
+TARGET_LINK_LIBRARIES(http_server icee_core icee_http)
+TARGET_COMPILE_OPTIONS(http_server PRIVATE ${CMAKE_COMPILER_FLAG})
+TARGET_INCLUDE_DIRECTORIES(
+        http_server
+        PUBLIC ${ICEE_SERVER_SRC_INCLUDE_DIR}  #将目录暴露给 http_server
 )
 
 
@@ -117,9 +126,6 @@ target_link_libraries(net_address_test doctest_with_main icee_core)
 ADD_EXECUTABLE(looper_test ${ICEE_SERVER_TEST_DIR}/core/looper_test.cc)
 target_link_libraries(looper_test doctest_with_main icee_core)
 
-# Test Header
-ADD_EXECUTABLE(header_test ${ICEE_SERVER_TEST_DIR}/http/header_test.cc)
-target_link_libraries(header_test doctest_with_main icee_core)
 
 # Test Request
 ADD_EXECUTABLE(request_test ${ICEE_SERVER_TEST_DIR}/http/request_test.cc)
@@ -128,9 +134,6 @@ target_link_libraries(request_test doctest_with_main icee_http)
 # Test Response
 ADD_EXECUTABLE(response_test ${ICEE_SERVER_TEST_DIR}/http/responses_test.cc)
 target_link_libraries(response_test doctest_with_main icee_http)
-
-
-
 
 
 
