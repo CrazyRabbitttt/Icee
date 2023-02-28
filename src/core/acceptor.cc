@@ -19,7 +19,7 @@ Acceptor::Acceptor(EventLooper *listener, std::vector<EventLooper *> reactors, N
   acceptor_conn_->SetLooper(listener);   // 本 connection 设置 EventLooper
 
   listener->AddAcceptor(acceptor_conn_.get());
-  SetCustomAcceptCallback([](Connection *){});
+  SetCustomAcceptCallback([](Connection *){});  // 传入的参数没有意义
   SetCustomHandleCallback([](Connection *){});
 }
 
