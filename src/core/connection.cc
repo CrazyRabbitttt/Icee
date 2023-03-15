@@ -59,12 +59,13 @@ auto Connection::WriteAsString() const noexcept -> std::string {
   return {string_view.begin(), string_view.end()};
 }
 
+// 调用 Recv 其实是在数据已经准备好了的情况下， 然后不断的将数据拷贝到用户空间
 auto Connection::Recv() -> std::pair<ssize_t, bool> {
   ssize_t recv_bytes{0};
   int from_fd = GetFd();
   unsigned char buf[TEMP_BUF_SIZE];  // 使用栈变量来进行数据的存放
   memset(buf, 0, sizeof buf);
-  while (true) {
+  while (true) {  // ET 模式需要一次性将数据读取出来
     ssize_t cur_read = recv(from_fd, buf, TEMP_BUF_SIZE, 0);
     if (cur_read > 0) {
       recv_bytes += cur_read;
@@ -91,6 +92,7 @@ void Connection::Send() {
   const size_t left_write = GetWriteBufferSize();
   const unsigned char *buf = write_buffer_->Data();
   while (cur_write < left_write) {
+    // 写缓冲区满了之后才发送，write 是缓冲区有数据就发送
     write = send(GetFd(), buf + cur_write, left_write - cur_write, 0);
     if (write <= 0) {
       // 那么就是真正的发生了 error
@@ -99,7 +101,8 @@ void Connection::Send() {
         ClearWriteBuffer();
         return;
       }
-      // 否则等一会而就行了
+      // 否则等一会而就行了（你的数据发送的太快了，网卡跟不上）
+      // TODO：fix,注册写事件到 epoll 中，让操作系统去支持，不然其实就是 阻塞的了
       write = 0;
     }
     cur_write += write;
