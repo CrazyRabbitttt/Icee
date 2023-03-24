@@ -19,7 +19,7 @@ class ThreadSafeQueue {
     auto p = std::make_shared<T>(std::move(new_value));
     std::lock_guard<std::mutex> lk(m_mtx);
     m_queue.push(p);
-    m_cond.notify_one();  // 1
+    m_cond.notify_one();  // made a new task, notify waiting thread to handle the task
   }
 
   void WaitAndPop(T &value)  // 2
