@@ -1,11 +1,13 @@
 #include "core/connection.h"
+#include "log/logger.h"
 
 #include <sys/socket.h>
 
 namespace Icee {
 
 Connection::Connection(std::unique_ptr<Socket> socket)
-    : socket_(std::move(socket)), read_buffer_(std::make_unique<Buffer>()), write_buffer_(std::make_unique<Buffer>()) {}
+    : socket_(std::move(socket)), read_buffer_(std::make_unique<Buffer>()), write_buffer_(std::make_unique<Buffer>()) {
+}
 
 auto Connection::GetFd() const -> int { return socket_->GetFd(); }
 

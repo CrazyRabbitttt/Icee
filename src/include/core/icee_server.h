@@ -13,6 +13,7 @@
 #include "http/http_utils.h"
 #include "http/request.h"
 #include "http/response.h"
+#include "log/logger.h"
 
 namespace Icee {
 
@@ -54,6 +55,8 @@ class IceeServer {
   }
 
   void Begin() {
+    LOG_INFO("hello from log info()");
+    LOG_DEBUG("hello from log debug...");
     if (!seted_On_handle_) {
       printf("feguy\n");
       throw std::logic_error("Should specify onHandle callback function before starts");

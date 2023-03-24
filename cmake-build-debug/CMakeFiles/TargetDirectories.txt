@@ -1,5 +1,6 @@
 /Users/shaoguixin/Icee/cmake-build-debug/CMakeFiles/icee_core.dir
 /Users/shaoguixin/Icee/cmake-build-debug/CMakeFiles/icee_http.dir
+/Users/shaoguixin/Icee/cmake-build-debug/CMakeFiles/icee_log.dir
 /Users/shaoguixin/Icee/cmake-build-debug/CMakeFiles/echo_server.dir
 /Users/shaoguixin/Icee/cmake-build-debug/CMakeFiles/echo_client.dir
 /Users/shaoguixin/Icee/cmake-build-debug/CMakeFiles/http_server.dir

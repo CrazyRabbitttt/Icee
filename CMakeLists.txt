@@ -44,11 +44,17 @@ message(${ICEE_SERVER_SRC_INCLUDE_DIR})
 ########################################################
 set(CMAKE_COMPILER_FLAG -O3 -Wall -g -Werror)
 
+IF (${LOG_LEVEL} MATCHES "NOLOG")
+    MESSAGE("Build in ${LOG_LEVEL} mode without Logging")
+    ADD_DEFINITIONS(-DNOLOG)
+ELSE()
+    MESSAGE("Build with Logging enabled")
+ENDIF()
 
 #Build the icee library
 FILE(GLOB ICEE_CORE_SOURCE RELATIVE ${CMAKE_SOURCE_DIR} "src/core/*.cc")
 ADD_LIBRARY(icee_core ${ICEE_CORE_SOURCE})
-TARGET_LINK_LIBRARIES(icee_core Threads::Threads)
+TARGET_LINK_LIBRARIES(icee_core icee_log Threads::Threads)
 TARGET_COMPILE_OPTIONS(icee_core PRIVATE ${CMAKE_COMPILER_FLAG})
 target_include_directories(
         icee_core
@@ -58,11 +64,21 @@ target_include_directories(
 # Build the net library
 FILE(GLOB ICEE_HTTP_SOURCE RELATIVE ${CMAKE_SOURCE_DIR} "src/http/*.cc")
 ADD_LIBRARY(icee_http ${ICEE_HTTP_SOURCE})
-TARGET_LINK_LIBRARIES(icee_http Threads::Threads)
+TARGET_LINK_LIBRARIES(icee_http icee_log Threads::Threads)
 TARGET_COMPILE_OPTIONS(icee_http PRIVATE ${CMAKE_COMPILER_FLAG})
 target_include_directories(
         icee_http
         PUBLIC ${ICEE_SERVER_SRC_INCLUDE_DIR}   #将目录暴露给 http
+)
+
+# Build the Icee logging library
+FILE(GLOB ICEE_LOG_SOURCE RELATIVE ${CMAKE_SOURCE_DIR} "src/log/*.cc")
+ADD_LIBRARY(icee_log ${ICEE_LOG_SOURCE})
+TARGET_LINK_LIBRARIES(icee_log Threads::Threads)
+TARGET_COMPILE_OPTIONS(icee_log PRIVATE ${CMAKE_COMPILER_FLAG})
+target_link_directories(
+        icee_log
+        PUBLIC ${ICEE_SERVER_SRC_INCLUDE_DIR}
 )
 
 # Build the echo server
@@ -151,6 +167,7 @@ target_link_libraries(request_test doctest_with_main icee_http)
 # Test Response
 ADD_EXECUTABLE(response_test ${ICEE_SERVER_TEST_DIR}/http/responses_test.cc)
 target_link_libraries(response_test doctest_with_main icee_http)
+
 
 
 

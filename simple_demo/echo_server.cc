@@ -1,4 +1,5 @@
 #include "core/icee_server.h"
+#include "log/logger.h"
 
 int main() {
   Icee::NetAddress local_address("0.0.0.0", 20080);
@@ -19,4 +20,5 @@ int main() {
         }
       });
   echo_server.Begin();
+
 }

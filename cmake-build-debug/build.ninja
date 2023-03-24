@@ -44,7 +44,7 @@ cmake_ninja_workdir = /Users/shaoguixin/Icee/cmake-build-debug/
 #############################################
 # Order-only phony target for icee_core
 
-build cmake_object_order_depends_target_icee_core: phony || CMakeFiles/icee_core.dir
+build cmake_object_order_depends_target_icee_core: phony || cmake_object_order_depends_target_icee_log
 
 build CMakeFiles/icee_core.dir/src/core/acceptor.cc.o: CXX_COMPILER__icee_core_Debug /Users/shaoguixin/Icee/src/core/acceptor.cc || cmake_object_order_depends_target_icee_core
   DEFINES = -DOS_MAC
@@ -118,7 +118,7 @@ build CMakeFiles/icee_core.dir/src/core/socket.cc.o: CXX_COMPILER__icee_core_Deb
 #############################################
 # Link the static library libicee_core.a
 
-build libicee_core.a: CXX_STATIC_LIBRARY_LINKER__icee_core_Debug CMakeFiles/icee_core.dir/src/core/acceptor.cc.o CMakeFiles/icee_core.dir/src/core/buffer.cc.o CMakeFiles/icee_core.dir/src/core/cache.cc.o CMakeFiles/icee_core.dir/src/core/connection.cc.o CMakeFiles/icee_core.dir/src/core/eventLooper.cc.o CMakeFiles/icee_core.dir/src/core/net_address.cc.o CMakeFiles/icee_core.dir/src/core/poller.cc.o CMakeFiles/icee_core.dir/src/core/socket.cc.o
+build libicee_core.a: CXX_STATIC_LIBRARY_LINKER__icee_core_Debug CMakeFiles/icee_core.dir/src/core/acceptor.cc.o CMakeFiles/icee_core.dir/src/core/buffer.cc.o CMakeFiles/icee_core.dir/src/core/cache.cc.o CMakeFiles/icee_core.dir/src/core/connection.cc.o CMakeFiles/icee_core.dir/src/core/eventLooper.cc.o CMakeFiles/icee_core.dir/src/core/net_address.cc.o CMakeFiles/icee_core.dir/src/core/poller.cc.o CMakeFiles/icee_core.dir/src/core/socket.cc.o || libicee_log.a
   ARCH_FLAGS = -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk -mmacosx-version-min=12.0
   LANGUAGE_COMPILE_FLAGS = -std=c++17 -g
   OBJECT_DIR = CMakeFiles/icee_core.dir
@@ -134,7 +134,7 @@ build libicee_core.a: CXX_STATIC_LIBRARY_LINKER__icee_core_Debug CMakeFiles/icee
 #############################################
 # Order-only phony target for icee_http
 
-build cmake_object_order_depends_target_icee_http: phony || CMakeFiles/icee_http.dir
+build cmake_object_order_depends_target_icee_http: phony || cmake_object_order_depends_target_icee_log
 
 build CMakeFiles/icee_http.dir/src/http/cgier.cc.o: CXX_COMPILER__icee_http_Debug /Users/shaoguixin/Icee/src/http/cgier.cc || cmake_object_order_depends_target_icee_http
   DEFINES = -DOS_MAC
@@ -192,7 +192,7 @@ build CMakeFiles/icee_http.dir/src/http/response.cc.o: CXX_COMPILER__icee_http_D
 #############################################
 # Link the static library libicee_http.a
 
-build libicee_http.a: CXX_STATIC_LIBRARY_LINKER__icee_http_Debug CMakeFiles/icee_http.dir/src/http/cgier.cc.o CMakeFiles/icee_http.dir/src/http/header.cc.o CMakeFiles/icee_http.dir/src/http/http_server.cc.o CMakeFiles/icee_http.dir/src/http/http_utils.cc.o CMakeFiles/icee_http.dir/src/http/request.cc.o CMakeFiles/icee_http.dir/src/http/response.cc.o
+build libicee_http.a: CXX_STATIC_LIBRARY_LINKER__icee_http_Debug CMakeFiles/icee_http.dir/src/http/cgier.cc.o CMakeFiles/icee_http.dir/src/http/header.cc.o CMakeFiles/icee_http.dir/src/http/http_server.cc.o CMakeFiles/icee_http.dir/src/http/http_utils.cc.o CMakeFiles/icee_http.dir/src/http/request.cc.o CMakeFiles/icee_http.dir/src/http/response.cc.o || libicee_log.a
   ARCH_FLAGS = -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk -mmacosx-version-min=12.0
   LANGUAGE_COMPILE_FLAGS = -std=c++17 -g
   OBJECT_DIR = CMakeFiles/icee_http.dir
@@ -202,13 +202,47 @@ build libicee_http.a: CXX_STATIC_LIBRARY_LINKER__icee_http_Debug CMakeFiles/icee
   TARGET_PDB = icee_http.a.dbg
 
 # =============================================================================
+# Object build statements for STATIC_LIBRARY target icee_log
+
+
+#############################################
+# Order-only phony target for icee_log
+
+build cmake_object_order_depends_target_icee_log: phony || CMakeFiles/icee_log.dir
+
+build CMakeFiles/icee_log.dir/src/log/logger.cc.o: CXX_COMPILER__icee_log_Debug /Users/shaoguixin/Icee/src/log/logger.cc || cmake_object_order_depends_target_icee_log
+  DEFINES = -DOS_MAC
+  DEP_FILE = CMakeFiles/icee_log.dir/src/log/logger.cc.o.d
+  FLAGS = -std=c++17 -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk -mmacosx-version-min=12.0 -fcolor-diagnostics -O3 -Wall -g -Werror -std=gnu++17
+  INCLUDES = -I/Users/shaoguixin/Icee/src/include
+  OBJECT_DIR = CMakeFiles/icee_log.dir
+  OBJECT_FILE_DIR = CMakeFiles/icee_log.dir/src/log
+
+
+# =============================================================================
+# Link build statements for STATIC_LIBRARY target icee_log
+
+
+#############################################
+# Link the static library libicee_log.a
+
+build libicee_log.a: CXX_STATIC_LIBRARY_LINKER__icee_log_Debug CMakeFiles/icee_log.dir/src/log/logger.cc.o
+  ARCH_FLAGS = -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk -mmacosx-version-min=12.0
+  LANGUAGE_COMPILE_FLAGS = -std=c++17 -g
+  OBJECT_DIR = CMakeFiles/icee_log.dir
+  POST_BUILD = :
+  PRE_LINK = :
+  TARGET_FILE = libicee_log.a
+  TARGET_PDB = icee_log.a.dbg
+
+# =============================================================================
 # Object build statements for EXECUTABLE target echo_server
 
 
 #############################################
 # Order-only phony target for echo_server
 
-build cmake_object_order_depends_target_echo_server: phony || cmake_object_order_depends_target_icee_core
+build cmake_object_order_depends_target_echo_server: phony || cmake_object_order_depends_target_icee_core cmake_object_order_depends_target_icee_log
 
 build CMakeFiles/echo_server.dir/simple_demo/echo_server.cc.o: CXX_COMPILER__echo_server_Debug /Users/shaoguixin/Icee/simple_demo/echo_server.cc || cmake_object_order_depends_target_echo_server
   DEFINES = -DOS_MAC
@@ -226,9 +260,10 @@ build CMakeFiles/echo_server.dir/simple_demo/echo_server.cc.o: CXX_COMPILER__ech
 #############################################
 # Link the executable echo_server
 
-build echo_server: CXX_EXECUTABLE_LINKER__echo_server_Debug CMakeFiles/echo_server.dir/simple_demo/echo_server.cc.o | libicee_core.a || libicee_core.a
+build echo_server: CXX_EXECUTABLE_LINKER__echo_server_Debug CMakeFiles/echo_server.dir/simple_demo/echo_server.cc.o | libicee_core.a libicee_log.a || libicee_core.a libicee_log.a
   FLAGS = -std=c++17 -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk -mmacosx-version-min=12.0
-  LINK_LIBRARIES = libicee_core.a
+  LINK_LIBRARIES = -Wl,-rpath,/Users/shaoguixin/Icee/src/include  libicee_core.a  libicee_log.a
+  LINK_PATH = -L/Users/shaoguixin/Icee/src/include
   OBJECT_DIR = CMakeFiles/echo_server.dir
   POST_BUILD = :
   PRE_LINK = :
@@ -242,7 +277,7 @@ build echo_server: CXX_EXECUTABLE_LINKER__echo_server_Debug CMakeFiles/echo_serv
 #############################################
 # Order-only phony target for echo_client
 
-build cmake_object_order_depends_target_echo_client: phony || cmake_object_order_depends_target_icee_core
+build cmake_object_order_depends_target_echo_client: phony || cmake_object_order_depends_target_icee_core cmake_object_order_depends_target_icee_log
 
 build CMakeFiles/echo_client.dir/simple_demo/echo_client.cc.o: CXX_COMPILER__echo_client_Debug /Users/shaoguixin/Icee/simple_demo/echo_client.cc || cmake_object_order_depends_target_echo_client
   DEFINES = -DOS_MAC
@@ -260,9 +295,10 @@ build CMakeFiles/echo_client.dir/simple_demo/echo_client.cc.o: CXX_COMPILER__ech
 #############################################
 # Link the executable echo_client
 
-build echo_client: CXX_EXECUTABLE_LINKER__echo_client_Debug CMakeFiles/echo_client.dir/simple_demo/echo_client.cc.o | libicee_core.a || libicee_core.a
+build echo_client: CXX_EXECUTABLE_LINKER__echo_client_Debug CMakeFiles/echo_client.dir/simple_demo/echo_client.cc.o | libicee_core.a libicee_log.a || libicee_core.a libicee_log.a
   FLAGS = -std=c++17 -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk -mmacosx-version-min=12.0
-  LINK_LIBRARIES = libicee_core.a
+  LINK_LIBRARIES = -Wl,-rpath,/Users/shaoguixin/Icee/src/include  libicee_core.a  libicee_log.a
+  LINK_PATH = -L/Users/shaoguixin/Icee/src/include
   OBJECT_DIR = CMakeFiles/echo_client.dir
   POST_BUILD = :
   PRE_LINK = :
@@ -276,7 +312,7 @@ build echo_client: CXX_EXECUTABLE_LINKER__echo_client_Debug CMakeFiles/echo_clie
 #############################################
 # Order-only phony target for http_server
 
-build cmake_object_order_depends_target_http_server: phony || cmake_object_order_depends_target_icee_core cmake_object_order_depends_target_icee_http
+build cmake_object_order_depends_target_http_server: phony || cmake_object_order_depends_target_icee_core cmake_object_order_depends_target_icee_http cmake_object_order_depends_target_icee_log
 
 build CMakeFiles/http_server.dir/src/http/http_server.cc.o: CXX_COMPILER__http_server_Debug /Users/shaoguixin/Icee/src/http/http_server.cc || cmake_object_order_depends_target_http_server
   DEFINES = -DOS_MAC
@@ -294,9 +330,10 @@ build CMakeFiles/http_server.dir/src/http/http_server.cc.o: CXX_COMPILER__http_s
 #############################################
 # Link the executable http_server
 
-build http_server: CXX_EXECUTABLE_LINKER__http_server_Debug CMakeFiles/http_server.dir/src/http/http_server.cc.o | libicee_core.a libicee_http.a || libicee_core.a libicee_http.a
+build http_server: CXX_EXECUTABLE_LINKER__http_server_Debug CMakeFiles/http_server.dir/src/http/http_server.cc.o | libicee_core.a libicee_http.a libicee_log.a || libicee_core.a libicee_http.a libicee_log.a
   FLAGS = -std=c++17 -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk -mmacosx-version-min=12.0
-  LINK_LIBRARIES = libicee_core.a  libicee_http.a
+  LINK_LIBRARIES = -Wl,-rpath,/Users/shaoguixin/Icee/src/include  libicee_core.a  libicee_http.a  libicee_log.a
+  LINK_PATH = -L/Users/shaoguixin/Icee/src/include
   OBJECT_DIR = CMakeFiles/http_server.dir
   POST_BUILD = :
   PRE_LINK = :
@@ -344,7 +381,7 @@ build thread_pool_test: CXX_EXECUTABLE_LINKER__thread_pool_test_Debug CMakeFiles
 #############################################
 # Order-only phony target for buffer_test
 
-build cmake_object_order_depends_target_buffer_test: phony || cmake_object_order_depends_target_doctest_with_main cmake_object_order_depends_target_icee_core
+build cmake_object_order_depends_target_buffer_test: phony || cmake_object_order_depends_target_doctest_with_main cmake_object_order_depends_target_icee_core cmake_object_order_depends_target_icee_log
 
 build CMakeFiles/buffer_test.dir/test/core/buffer_test.cc.o: CXX_COMPILER__buffer_test_Debug /Users/shaoguixin/Icee/test/core/buffer_test.cc || cmake_object_order_depends_target_buffer_test
   DEFINES = -DOS_MAC
@@ -362,9 +399,10 @@ build CMakeFiles/buffer_test.dir/test/core/buffer_test.cc.o: CXX_COMPILER__buffe
 #############################################
 # Link the executable buffer_test
 
-build buffer_test: CXX_EXECUTABLE_LINKER__buffer_test_Debug CMakeFiles/buffer_test.dir/test/core/buffer_test.cc.o | _deps/doctest-build/libdoctest_with_main.a libicee_core.a || _deps/doctest-build/libdoctest_with_main.a libicee_core.a
+build buffer_test: CXX_EXECUTABLE_LINKER__buffer_test_Debug CMakeFiles/buffer_test.dir/test/core/buffer_test.cc.o | _deps/doctest-build/libdoctest_with_main.a libicee_core.a libicee_log.a || _deps/doctest-build/libdoctest_with_main.a libicee_core.a libicee_log.a
   FLAGS = -std=c++17 -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk -mmacosx-version-min=12.0
-  LINK_LIBRARIES = _deps/doctest-build/libdoctest_with_main.a  libicee_core.a
+  LINK_LIBRARIES = -Wl,-rpath,/Users/shaoguixin/Icee/src/include  _deps/doctest-build/libdoctest_with_main.a  libicee_core.a  libicee_log.a
+  LINK_PATH = -L/Users/shaoguixin/Icee/src/include
   OBJECT_DIR = CMakeFiles/buffer_test.dir
   POST_BUILD = :
   PRE_LINK = :
@@ -378,7 +416,7 @@ build buffer_test: CXX_EXECUTABLE_LINKER__buffer_test_Debug CMakeFiles/buffer_te
 #############################################
 # Order-only phony target for cache_test
 
-build cmake_object_order_depends_target_cache_test: phony || cmake_object_order_depends_target_doctest_with_main cmake_object_order_depends_target_icee_core
+build cmake_object_order_depends_target_cache_test: phony || cmake_object_order_depends_target_doctest_with_main cmake_object_order_depends_target_icee_core cmake_object_order_depends_target_icee_log
 
 build CMakeFiles/cache_test.dir/test/core/cache_test.cc.o: CXX_COMPILER__cache_test_Debug /Users/shaoguixin/Icee/test/core/cache_test.cc || cmake_object_order_depends_target_cache_test
   DEFINES = -DOS_MAC
@@ -396,9 +434,10 @@ build CMakeFiles/cache_test.dir/test/core/cache_test.cc.o: CXX_COMPILER__cache_t
 #############################################
 # Link the executable cache_test
 
-build cache_test: CXX_EXECUTABLE_LINKER__cache_test_Debug CMakeFiles/cache_test.dir/test/core/cache_test.cc.o | _deps/doctest-build/libdoctest_with_main.a libicee_core.a || _deps/doctest-build/libdoctest_with_main.a libicee_core.a
+build cache_test: CXX_EXECUTABLE_LINKER__cache_test_Debug CMakeFiles/cache_test.dir/test/core/cache_test.cc.o | _deps/doctest-build/libdoctest_with_main.a libicee_core.a libicee_log.a || _deps/doctest-build/libdoctest_with_main.a libicee_core.a libicee_log.a
   FLAGS = -std=c++17 -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk -mmacosx-version-min=12.0
-  LINK_LIBRARIES = _deps/doctest-build/libdoctest_with_main.a  libicee_core.a
+  LINK_LIBRARIES = -Wl,-rpath,/Users/shaoguixin/Icee/src/include  _deps/doctest-build/libdoctest_with_main.a  libicee_core.a  libicee_log.a
+  LINK_PATH = -L/Users/shaoguixin/Icee/src/include
   OBJECT_DIR = CMakeFiles/cache_test.dir
   POST_BUILD = :
   PRE_LINK = :
@@ -412,7 +451,7 @@ build cache_test: CXX_EXECUTABLE_LINKER__cache_test_Debug CMakeFiles/cache_test.
 #############################################
 # Order-only phony target for poller_test
 
-build cmake_object_order_depends_target_poller_test: phony || cmake_object_order_depends_target_doctest_with_main cmake_object_order_depends_target_icee_core
+build cmake_object_order_depends_target_poller_test: phony || cmake_object_order_depends_target_doctest_with_main cmake_object_order_depends_target_icee_core cmake_object_order_depends_target_icee_log
 
 build CMakeFiles/poller_test.dir/test/core/poller_test.cc.o: CXX_COMPILER__poller_test_Debug /Users/shaoguixin/Icee/test/core/poller_test.cc || cmake_object_order_depends_target_poller_test
   DEFINES = -DOS_MAC
@@ -430,9 +469,10 @@ build CMakeFiles/poller_test.dir/test/core/poller_test.cc.o: CXX_COMPILER__polle
 #############################################
 # Link the executable poller_test
 
-build poller_test: CXX_EXECUTABLE_LINKER__poller_test_Debug CMakeFiles/poller_test.dir/test/core/poller_test.cc.o | _deps/doctest-build/libdoctest_with_main.a libicee_core.a || _deps/doctest-build/libdoctest_with_main.a libicee_core.a
+build poller_test: CXX_EXECUTABLE_LINKER__poller_test_Debug CMakeFiles/poller_test.dir/test/core/poller_test.cc.o | _deps/doctest-build/libdoctest_with_main.a libicee_core.a libicee_log.a || _deps/doctest-build/libdoctest_with_main.a libicee_core.a libicee_log.a
   FLAGS = -std=c++17 -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk -mmacosx-version-min=12.0
-  LINK_LIBRARIES = _deps/doctest-build/libdoctest_with_main.a  libicee_core.a
+  LINK_LIBRARIES = -Wl,-rpath,/Users/shaoguixin/Icee/src/include  _deps/doctest-build/libdoctest_with_main.a  libicee_core.a  libicee_log.a
+  LINK_PATH = -L/Users/shaoguixin/Icee/src/include
   OBJECT_DIR = CMakeFiles/poller_test.dir
   POST_BUILD = :
   PRE_LINK = :
@@ -446,7 +486,7 @@ build poller_test: CXX_EXECUTABLE_LINKER__poller_test_Debug CMakeFiles/poller_te
 #############################################
 # Order-only phony target for socket_test
 
-build cmake_object_order_depends_target_socket_test: phony || cmake_object_order_depends_target_doctest_with_main cmake_object_order_depends_target_icee_core
+build cmake_object_order_depends_target_socket_test: phony || cmake_object_order_depends_target_doctest_with_main cmake_object_order_depends_target_icee_core cmake_object_order_depends_target_icee_log
 
 build CMakeFiles/socket_test.dir/test/core/socket_test.cc.o: CXX_COMPILER__socket_test_Debug /Users/shaoguixin/Icee/test/core/socket_test.cc || cmake_object_order_depends_target_socket_test
   DEFINES = -DOS_MAC
@@ -464,9 +504,10 @@ build CMakeFiles/socket_test.dir/test/core/socket_test.cc.o: CXX_COMPILER__socke
 #############################################
 # Link the executable socket_test
 
-build socket_test: CXX_EXECUTABLE_LINKER__socket_test_Debug CMakeFiles/socket_test.dir/test/core/socket_test.cc.o | _deps/doctest-build/libdoctest_with_main.a libicee_core.a || _deps/doctest-build/libdoctest_with_main.a libicee_core.a
+build socket_test: CXX_EXECUTABLE_LINKER__socket_test_Debug CMakeFiles/socket_test.dir/test/core/socket_test.cc.o | _deps/doctest-build/libdoctest_with_main.a libicee_core.a libicee_log.a || _deps/doctest-build/libdoctest_with_main.a libicee_core.a libicee_log.a
   FLAGS = -std=c++17 -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk -mmacosx-version-min=12.0
-  LINK_LIBRARIES = _deps/doctest-build/libdoctest_with_main.a  libicee_core.a
+  LINK_LIBRARIES = -Wl,-rpath,/Users/shaoguixin/Icee/src/include  _deps/doctest-build/libdoctest_with_main.a  libicee_core.a  libicee_log.a
+  LINK_PATH = -L/Users/shaoguixin/Icee/src/include
   OBJECT_DIR = CMakeFiles/socket_test.dir
   POST_BUILD = :
   PRE_LINK = :
@@ -480,7 +521,7 @@ build socket_test: CXX_EXECUTABLE_LINKER__socket_test_Debug CMakeFiles/socket_te
 #############################################
 # Order-only phony target for acceptor_test
 
-build cmake_object_order_depends_target_acceptor_test: phony || cmake_object_order_depends_target_doctest_with_main cmake_object_order_depends_target_icee_core
+build cmake_object_order_depends_target_acceptor_test: phony || cmake_object_order_depends_target_doctest_with_main cmake_object_order_depends_target_icee_core cmake_object_order_depends_target_icee_log
 
 build CMakeFiles/acceptor_test.dir/test/core/acceptor_test.cc.o: CXX_COMPILER__acceptor_test_Debug /Users/shaoguixin/Icee/test/core/acceptor_test.cc || cmake_object_order_depends_target_acceptor_test
   DEFINES = -DOS_MAC
@@ -498,9 +539,10 @@ build CMakeFiles/acceptor_test.dir/test/core/acceptor_test.cc.o: CXX_COMPILER__a
 #############################################
 # Link the executable acceptor_test
 
-build acceptor_test: CXX_EXECUTABLE_LINKER__acceptor_test_Debug CMakeFiles/acceptor_test.dir/test/core/acceptor_test.cc.o | _deps/doctest-build/libdoctest_with_main.a libicee_core.a || _deps/doctest-build/libdoctest_with_main.a libicee_core.a
+build acceptor_test: CXX_EXECUTABLE_LINKER__acceptor_test_Debug CMakeFiles/acceptor_test.dir/test/core/acceptor_test.cc.o | _deps/doctest-build/libdoctest_with_main.a libicee_core.a libicee_log.a || _deps/doctest-build/libdoctest_with_main.a libicee_core.a libicee_log.a
   FLAGS = -std=c++17 -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk -mmacosx-version-min=12.0
-  LINK_LIBRARIES = _deps/doctest-build/libdoctest_with_main.a  libicee_core.a
+  LINK_LIBRARIES = -Wl,-rpath,/Users/shaoguixin/Icee/src/include  _deps/doctest-build/libdoctest_with_main.a  libicee_core.a  libicee_log.a
+  LINK_PATH = -L/Users/shaoguixin/Icee/src/include
   OBJECT_DIR = CMakeFiles/acceptor_test.dir
   POST_BUILD = :
   PRE_LINK = :
@@ -514,7 +556,7 @@ build acceptor_test: CXX_EXECUTABLE_LINKER__acceptor_test_Debug CMakeFiles/accep
 #############################################
 # Order-only phony target for connection_test
 
-build cmake_object_order_depends_target_connection_test: phony || cmake_object_order_depends_target_doctest_with_main cmake_object_order_depends_target_icee_core
+build cmake_object_order_depends_target_connection_test: phony || cmake_object_order_depends_target_doctest_with_main cmake_object_order_depends_target_icee_core cmake_object_order_depends_target_icee_log
 
 build CMakeFiles/connection_test.dir/test/core/connection_test.cc.o: CXX_COMPILER__connection_test_Debug /Users/shaoguixin/Icee/test/core/connection_test.cc || cmake_object_order_depends_target_connection_test
   DEFINES = -DOS_MAC
@@ -532,9 +574,10 @@ build CMakeFiles/connection_test.dir/test/core/connection_test.cc.o: CXX_COMPILE
 #############################################
 # Link the executable connection_test
 
-build connection_test: CXX_EXECUTABLE_LINKER__connection_test_Debug CMakeFiles/connection_test.dir/test/core/connection_test.cc.o | _deps/doctest-build/libdoctest_with_main.a libicee_core.a || _deps/doctest-build/libdoctest_with_main.a libicee_core.a
+build connection_test: CXX_EXECUTABLE_LINKER__connection_test_Debug CMakeFiles/connection_test.dir/test/core/connection_test.cc.o | _deps/doctest-build/libdoctest_with_main.a libicee_core.a libicee_log.a || _deps/doctest-build/libdoctest_with_main.a libicee_core.a libicee_log.a
   FLAGS = -std=c++17 -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk -mmacosx-version-min=12.0
-  LINK_LIBRARIES = _deps/doctest-build/libdoctest_with_main.a  libicee_core.a
+  LINK_LIBRARIES = -Wl,-rpath,/Users/shaoguixin/Icee/src/include  _deps/doctest-build/libdoctest_with_main.a  libicee_core.a  libicee_log.a
+  LINK_PATH = -L/Users/shaoguixin/Icee/src/include
   OBJECT_DIR = CMakeFiles/connection_test.dir
   POST_BUILD = :
   PRE_LINK = :
@@ -548,7 +591,7 @@ build connection_test: CXX_EXECUTABLE_LINKER__connection_test_Debug CMakeFiles/c
 #############################################
 # Order-only phony target for net_address_test
 
-build cmake_object_order_depends_target_net_address_test: phony || cmake_object_order_depends_target_doctest_with_main cmake_object_order_depends_target_icee_core
+build cmake_object_order_depends_target_net_address_test: phony || cmake_object_order_depends_target_doctest_with_main cmake_object_order_depends_target_icee_core cmake_object_order_depends_target_icee_log
 
 build CMakeFiles/net_address_test.dir/test/core/net_address_test.cc.o: CXX_COMPILER__net_address_test_Debug /Users/shaoguixin/Icee/test/core/net_address_test.cc || cmake_object_order_depends_target_net_address_test
   DEFINES = -DOS_MAC
@@ -566,9 +609,10 @@ build CMakeFiles/net_address_test.dir/test/core/net_address_test.cc.o: CXX_COMPI
 #############################################
 # Link the executable net_address_test
 
-build net_address_test: CXX_EXECUTABLE_LINKER__net_address_test_Debug CMakeFiles/net_address_test.dir/test/core/net_address_test.cc.o | _deps/doctest-build/libdoctest_with_main.a libicee_core.a || _deps/doctest-build/libdoctest_with_main.a libicee_core.a
+build net_address_test: CXX_EXECUTABLE_LINKER__net_address_test_Debug CMakeFiles/net_address_test.dir/test/core/net_address_test.cc.o | _deps/doctest-build/libdoctest_with_main.a libicee_core.a libicee_log.a || _deps/doctest-build/libdoctest_with_main.a libicee_core.a libicee_log.a
   FLAGS = -std=c++17 -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk -mmacosx-version-min=12.0
-  LINK_LIBRARIES = _deps/doctest-build/libdoctest_with_main.a  libicee_core.a
+  LINK_LIBRARIES = -Wl,-rpath,/Users/shaoguixin/Icee/src/include  _deps/doctest-build/libdoctest_with_main.a  libicee_core.a  libicee_log.a
+  LINK_PATH = -L/Users/shaoguixin/Icee/src/include
   OBJECT_DIR = CMakeFiles/net_address_test.dir
   POST_BUILD = :
   PRE_LINK = :
@@ -582,7 +626,7 @@ build net_address_test: CXX_EXECUTABLE_LINKER__net_address_test_Debug CMakeFiles
 #############################################
 # Order-only phony target for looper_test
 
-build cmake_object_order_depends_target_looper_test: phony || cmake_object_order_depends_target_doctest_with_main cmake_object_order_depends_target_icee_core
+build cmake_object_order_depends_target_looper_test: phony || cmake_object_order_depends_target_doctest_with_main cmake_object_order_depends_target_icee_core cmake_object_order_depends_target_icee_log
 
 build CMakeFiles/looper_test.dir/test/core/looper_test.cc.o: CXX_COMPILER__looper_test_Debug /Users/shaoguixin/Icee/test/core/looper_test.cc || cmake_object_order_depends_target_looper_test
   DEFINES = -DOS_MAC
@@ -600,9 +644,10 @@ build CMakeFiles/looper_test.dir/test/core/looper_test.cc.o: CXX_COMPILER__loope
 #############################################
 # Link the executable looper_test
 
-build looper_test: CXX_EXECUTABLE_LINKER__looper_test_Debug CMakeFiles/looper_test.dir/test/core/looper_test.cc.o | _deps/doctest-build/libdoctest_with_main.a libicee_core.a || _deps/doctest-build/libdoctest_with_main.a libicee_core.a
+build looper_test: CXX_EXECUTABLE_LINKER__looper_test_Debug CMakeFiles/looper_test.dir/test/core/looper_test.cc.o | _deps/doctest-build/libdoctest_with_main.a libicee_core.a libicee_log.a || _deps/doctest-build/libdoctest_with_main.a libicee_core.a libicee_log.a
   FLAGS = -std=c++17 -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk -mmacosx-version-min=12.0
-  LINK_LIBRARIES = _deps/doctest-build/libdoctest_with_main.a  libicee_core.a
+  LINK_LIBRARIES = -Wl,-rpath,/Users/shaoguixin/Icee/src/include  _deps/doctest-build/libdoctest_with_main.a  libicee_core.a  libicee_log.a
+  LINK_PATH = -L/Users/shaoguixin/Icee/src/include
   OBJECT_DIR = CMakeFiles/looper_test.dir
   POST_BUILD = :
   PRE_LINK = :
@@ -616,7 +661,7 @@ build looper_test: CXX_EXECUTABLE_LINKER__looper_test_Debug CMakeFiles/looper_te
 #############################################
 # Order-only phony target for request_test
 
-build cmake_object_order_depends_target_request_test: phony || cmake_object_order_depends_target_doctest_with_main cmake_object_order_depends_target_icee_http
+build cmake_object_order_depends_target_request_test: phony || cmake_object_order_depends_target_doctest_with_main cmake_object_order_depends_target_icee_http cmake_object_order_depends_target_icee_log
 
 build CMakeFiles/request_test.dir/test/http/request_test.cc.o: CXX_COMPILER__request_test_Debug /Users/shaoguixin/Icee/test/http/request_test.cc || cmake_object_order_depends_target_request_test
   DEFINES = -DOS_MAC
@@ -634,9 +679,10 @@ build CMakeFiles/request_test.dir/test/http/request_test.cc.o: CXX_COMPILER__req
 #############################################
 # Link the executable request_test
 
-build request_test: CXX_EXECUTABLE_LINKER__request_test_Debug CMakeFiles/request_test.dir/test/http/request_test.cc.o | _deps/doctest-build/libdoctest_with_main.a libicee_http.a || _deps/doctest-build/libdoctest_with_main.a libicee_http.a
+build request_test: CXX_EXECUTABLE_LINKER__request_test_Debug CMakeFiles/request_test.dir/test/http/request_test.cc.o | _deps/doctest-build/libdoctest_with_main.a libicee_http.a libicee_log.a || _deps/doctest-build/libdoctest_with_main.a libicee_http.a libicee_log.a
   FLAGS = -std=c++17 -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk -mmacosx-version-min=12.0
-  LINK_LIBRARIES = _deps/doctest-build/libdoctest_with_main.a  libicee_http.a
+  LINK_LIBRARIES = -Wl,-rpath,/Users/shaoguixin/Icee/src/include  _deps/doctest-build/libdoctest_with_main.a  libicee_http.a  libicee_log.a
+  LINK_PATH = -L/Users/shaoguixin/Icee/src/include
   OBJECT_DIR = CMakeFiles/request_test.dir
   POST_BUILD = :
   PRE_LINK = :
@@ -650,7 +696,7 @@ build request_test: CXX_EXECUTABLE_LINKER__request_test_Debug CMakeFiles/request
 #############################################
 # Order-only phony target for response_test
 
-build cmake_object_order_depends_target_response_test: phony || cmake_object_order_depends_target_doctest_with_main cmake_object_order_depends_target_icee_http
+build cmake_object_order_depends_target_response_test: phony || cmake_object_order_depends_target_doctest_with_main cmake_object_order_depends_target_icee_http cmake_object_order_depends_target_icee_log
 
 build CMakeFiles/response_test.dir/test/http/responses_test.cc.o: CXX_COMPILER__response_test_Debug /Users/shaoguixin/Icee/test/http/responses_test.cc || cmake_object_order_depends_target_response_test
   DEFINES = -DOS_MAC
@@ -668,9 +714,10 @@ build CMakeFiles/response_test.dir/test/http/responses_test.cc.o: CXX_COMPILER__
 #############################################
 # Link the executable response_test
 
-build response_test: CXX_EXECUTABLE_LINKER__response_test_Debug CMakeFiles/response_test.dir/test/http/responses_test.cc.o | _deps/doctest-build/libdoctest_with_main.a libicee_http.a || _deps/doctest-build/libdoctest_with_main.a libicee_http.a
+build response_test: CXX_EXECUTABLE_LINKER__response_test_Debug CMakeFiles/response_test.dir/test/http/responses_test.cc.o | _deps/doctest-build/libdoctest_with_main.a libicee_http.a libicee_log.a || _deps/doctest-build/libdoctest_with_main.a libicee_http.a libicee_log.a
   FLAGS = -std=c++17 -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk -mmacosx-version-min=12.0
-  LINK_LIBRARIES = _deps/doctest-build/libdoctest_with_main.a  libicee_http.a
+  LINK_LIBRARIES = -Wl,-rpath,/Users/shaoguixin/Icee/src/include  _deps/doctest-build/libdoctest_with_main.a  libicee_http.a  libicee_log.a
+  LINK_PATH = -L/Users/shaoguixin/Icee/src/include
   OBJECT_DIR = CMakeFiles/response_test.dir
   POST_BUILD = :
   PRE_LINK = :
@@ -855,6 +902,8 @@ build icee_core: phony libicee_core.a
 
 build icee_http: phony libicee_http.a
 
+build icee_log: phony libicee_log.a
+
 build libdoctest_with_main.a: phony _deps/doctest-build/libdoctest_with_main.a
 
 # =============================================================================
@@ -865,7 +914,7 @@ build libdoctest_with_main.a: phony _deps/doctest-build/libdoctest_with_main.a
 #############################################
 # Folder: /Users/shaoguixin/Icee/cmake-build-debug
 
-build all: phony libicee_core.a libicee_http.a echo_server echo_client http_server thread_pool_test buffer_test cache_test poller_test socket_test acceptor_test connection_test net_address_test looper_test request_test response_test _deps/doctest-build/all
+build all: phony libicee_core.a libicee_http.a libicee_log.a echo_server echo_client http_server thread_pool_test buffer_test cache_test poller_test socket_test acceptor_test connection_test net_address_test looper_test request_test response_test _deps/doctest-build/all
 
 # =============================================================================
 

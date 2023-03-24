@@ -15,6 +15,7 @@
 #include "core/net_address.h"
 #include "core/socket.h"
 #include "core/threadPool.h"
+#include "log/logger.h"
 
 #define BUF_SIZE 2048
 
@@ -57,6 +58,8 @@ int main() {
  Icee::NetAddress local_address("0.0.0.0", 20080);
  TURTLE_SERVER::EchoClient echo_client(local_address);
  echo_client.Begin();
+ LOG_INFO("hello from log info");
+ LOG_DEBUG("hello from log debug");
 
  return 0;
 }
