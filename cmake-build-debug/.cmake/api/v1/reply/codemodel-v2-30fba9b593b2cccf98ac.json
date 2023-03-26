@@ -1,0 +1,248 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"childIndexes" : 
+					[
+						1
+					],
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-.-Debug-f5ebdc15457944623624.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.14"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						5,
+						6,
+						7,
+						8,
+						9,
+						10,
+						11,
+						12,
+						13,
+						14,
+						15,
+						16,
+						17
+					]
+				},
+				{
+					"build" : "_deps/doctest-build",
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-_deps.doctest-build-Debug-b627015028c7201bbc95.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.0"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 1,
+					"source" : "cmake-build-debug/_deps/doctest-src",
+					"targetIndexes" : 
+					[
+						4
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"childIndexes" : 
+					[
+						1
+					],
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "Icee",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						5,
+						6,
+						7,
+						8,
+						9,
+						10,
+						11,
+						12,
+						13,
+						14,
+						15,
+						16,
+						17
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						1
+					],
+					"name" : "doctest",
+					"parentIndex" : 0,
+					"targetIndexes" : 
+					[
+						4
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "acceptor_test::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-acceptor_test-Debug-166c376e148b2cbd7cfd.json",
+					"name" : "acceptor_test",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "buffer_test::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-buffer_test-Debug-5570b0834baa7f305af3.json",
+					"name" : "buffer_test",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "cache_test::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-cache_test-Debug-e7209a68fb981656f9cb.json",
+					"name" : "cache_test",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "connection_test::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-connection_test-Debug-a0a36f6c4e4842395638.json",
+					"name" : "connection_test",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "doctest_with_main::@de8c2d1415f8a28c2e63",
+					"jsonFile" : "target-doctest_with_main-Debug-c4b648b2ce0dd6044c4d.json",
+					"name" : "doctest_with_main",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "echo_client::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-echo_client-Debug-01613d8367286dffe8eb.json",
+					"name" : "echo_client",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "echo_server::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-echo_server-Debug-c26b215426bf11294096.json",
+					"name" : "echo_server",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "http_server::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-http_server-Debug-d46d066416f6f1ba339a.json",
+					"name" : "http_server",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "icee_core::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-icee_core-Debug-f889c1218b679cb65dd6.json",
+					"name" : "icee_core",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "icee_http::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-icee_http-Debug-458e9185a29427fbdbcf.json",
+					"name" : "icee_http",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "icee_log::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-icee_log-Debug-50b7e6766c89cf58a169.json",
+					"name" : "icee_log",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "looper_test::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-looper_test-Debug-7b4fee94a681ef9b1254.json",
+					"name" : "looper_test",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "net_address_test::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-net_address_test-Debug-cbca7b5b19a181b6fb5e.json",
+					"name" : "net_address_test",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "poller_test::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-poller_test-Debug-748f036a9f858bbcf377.json",
+					"name" : "poller_test",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "request_test::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-request_test-Debug-8ab3a8c453ea1eec962b.json",
+					"name" : "request_test",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "response_test::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-response_test-Debug-8e48f485827fb1cf80c8.json",
+					"name" : "response_test",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "socket_test::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-socket_test-Debug-8bfdea6b1ca7dfad0159.json",
+					"name" : "socket_test",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "thread_pool_test::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-thread_pool_test-Debug-dad72071d7c107cb0b18.json",
+					"name" : "thread_pool_test",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/Users/shaoguixin/Icee/cmake-build-debug",
+		"source" : "/Users/shaoguixin/Icee"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 4
+	}
+}

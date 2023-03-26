@@ -1,0 +1,2 @@
+/Library/Developer/CommandLineTools/usr/bin/ar qc libicee_core.a CMakeFiles/icee_core.dir/src/core/acceptor.cc.o CMakeFiles/icee_core.dir/src/core/buffer.cc.o CMakeFiles/icee_core.dir/src/core/cache.cc.o CMakeFiles/icee_core.dir/src/core/connection.cc.o CMakeFiles/icee_core.dir/src/core/eventLooper.cc.o CMakeFiles/icee_core.dir/src/core/net_address.cc.o CMakeFiles/icee_core.dir/src/core/poller.cc.o CMakeFiles/icee_core.dir/src/core/socket.cc.o
+/Library/Developer/CommandLineTools/usr/bin/ranlib libicee_core.a

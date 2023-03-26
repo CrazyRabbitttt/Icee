@@ -1,0 +1,2 @@
+/Library/Developer/CommandLineTools/usr/bin/ar qc libicee_log.a CMakeFiles/icee_log.dir/src/log/logger.cc.o
+/Library/Developer/CommandLineTools/usr/bin/ranlib libicee_log.a

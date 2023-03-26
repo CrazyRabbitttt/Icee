@@ -1,0 +1,2 @@
+/Library/Developer/CommandLineTools/usr/bin/ar qc libicee_http.a CMakeFiles/icee_http.dir/src/http/cgier.cc.o CMakeFiles/icee_http.dir/src/http/header.cc.o CMakeFiles/icee_http.dir/src/http/http_server.cc.o CMakeFiles/icee_http.dir/src/http/http_utils.cc.o CMakeFiles/icee_http.dir/src/http/request.cc.o CMakeFiles/icee_http.dir/src/http/response.cc.o
+/Library/Developer/CommandLineTools/usr/bin/ranlib libicee_http.a

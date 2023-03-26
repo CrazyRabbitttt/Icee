@@ -1,0 +1,3 @@
+repository='https://gitee.com/acking-you/doctest.git'
+module=''
+tag='origin'
